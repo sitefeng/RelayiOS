@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		AAE874211BA3E5D100C6D4E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE874201BA3E5D100C6D4E4 /* AppDelegate.swift */; };
 		AAE874241BA3E5D100C6D4E4 /* LiveChat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AAE874221BA3E5D100C6D4E4 /* LiveChat.xcdatamodeld */; };
-		AAE874261BA3E5D100C6D4E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE874251BA3E5D100C6D4E4 /* ViewController.swift */; };
-		AAE874291BA3E5D100C6D4E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAE874271BA3E5D100C6D4E4 /* Main.storyboard */; };
 		AAE8742B1BA3E5D100C6D4E4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAE8742A1BA3E5D100C6D4E4 /* Images.xcassets */; };
 		AAE8742E1BA3E5D100C6D4E4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAE8742C1BA3E5D100C6D4E4 /* LaunchScreen.xib */; };
 		AAE8743A1BA3E5D100C6D4E4 /* LiveChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE874391BA3E5D100C6D4E4 /* LiveChatTests.swift */; };
+		AAE874461BA3EC8300C6D4E4 /* LCMainChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE874441BA3EC8300C6D4E4 /* LCMainChatViewController.swift */; };
+		AAE874471BA3EC8300C6D4E4 /* LCMainChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAE874451BA3EC8300C6D4E4 /* LCMainChatViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,13 +31,13 @@
 		AAE8741F1BA3E5D100C6D4E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AAE874201BA3E5D100C6D4E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AAE874231BA3E5D100C6D4E4 /* LiveChat.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LiveChat.xcdatamodel; sourceTree = "<group>"; };
-		AAE874251BA3E5D100C6D4E4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		AAE874281BA3E5D100C6D4E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AAE8742A1BA3E5D100C6D4E4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		AAE8742D1BA3E5D100C6D4E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		AAE874331BA3E5D100C6D4E4 /* LiveChatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LiveChatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAE874381BA3E5D100C6D4E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AAE874391BA3E5D100C6D4E4 /* LiveChatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveChatTests.swift; sourceTree = "<group>"; };
+		AAE874441BA3EC8300C6D4E4 /* LCMainChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LCMainChatViewController.swift; sourceTree = "<group>"; };
+		AAE874451BA3EC8300C6D4E4 /* LCMainChatViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LCMainChatViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,8 +80,8 @@
 			isa = PBXGroup;
 			children = (
 				AAE874201BA3E5D100C6D4E4 /* AppDelegate.swift */,
-				AAE874251BA3E5D100C6D4E4 /* ViewController.swift */,
-				AAE874271BA3E5D100C6D4E4 /* Main.storyboard */,
+				AAE874441BA3EC8300C6D4E4 /* LCMainChatViewController.swift */,
+				AAE874451BA3EC8300C6D4E4 /* LCMainChatViewController.xib */,
 				AAE8742A1BA3E5D100C6D4E4 /* Images.xcassets */,
 				AAE8742C1BA3E5D100C6D4E4 /* LaunchScreen.xib */,
 				AAE874221BA3E5D100C6D4E4 /* LiveChat.xcdatamodeld */,
@@ -195,7 +195,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAE874291BA3E5D100C6D4E4 /* Main.storyboard in Resources */,
+				AAE874471BA3EC8300C6D4E4 /* LCMainChatViewController.xib in Resources */,
 				AAE8742E1BA3E5D100C6D4E4 /* LaunchScreen.xib in Resources */,
 				AAE8742B1BA3E5D100C6D4E4 /* Images.xcassets in Resources */,
 			);
@@ -215,8 +215,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAE874261BA3E5D100C6D4E4 /* ViewController.swift in Sources */,
 				AAE874211BA3E5D100C6D4E4 /* AppDelegate.swift in Sources */,
+				AAE874461BA3EC8300C6D4E4 /* LCMainChatViewController.swift in Sources */,
 				AAE874241BA3E5D100C6D4E4 /* LiveChat.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -240,14 +240,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		AAE874271BA3E5D100C6D4E4 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AAE874281BA3E5D100C6D4E4 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		AAE8742C1BA3E5D100C6D4E4 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -345,6 +337,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = LiveChat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -355,6 +348,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = LiveChat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
