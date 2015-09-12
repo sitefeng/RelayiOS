@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>156A2C70-8629-4F61-8DA5-C7B5738534E1</string>
+	<key>IDESourceControlProjectName</key>
+	<string>project</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>73A71D41833BE190F71858E74326D831C65CA939</key>
+		<string>github.com:slingapp/live-chat-ios.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>LiveChat/LiveChat.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>73A71D41833BE190F71858E74326D831C65CA939</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:slingapp/live-chat-ios.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>73A71D41833BE190F71858E74326D831C65CA939</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>73A71D41833BE190F71858E74326D831C65CA939</string>
+			<key>IDESourceControlWCCName</key>
+			<string>live-chat-ios</string>
+		</dict>
+	</array>
+</dict>
+</plist>
