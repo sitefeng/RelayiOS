@@ -40,15 +40,18 @@ class LCMainChatViewController: UIViewController, UIGestureRecognizerDelegate {
     
     func drawed(rec: UIPanGestureRecognizer) {
         if (rec.state == UIGestureRecognizerState.Began) {
-            
+            println("began")
             
             
         } else if (rec.state == UIGestureRecognizerState.Changed) {
+            let recLocation = rec.locationInView(self.drawScrollView)
             
+            
+            println("loc:\(recLocation)")
             
             
         } else if (rec.state == UIGestureRecognizerState.Ended) {
-            
+            println("ended")
             
         }
         
@@ -56,8 +59,22 @@ class LCMainChatViewController: UIViewController, UIGestureRecognizerDelegate {
     
     
     func scrolled(rec: UIPanGestureRecognizer) {
+        let viewLoc = rec.locationInView(self.view)
+        let scrollLoc = rec.locationInView(self.drawScrollView)
         
-        
+        if (rec.state == UIGestureRecognizerState.Began) {
+            println("began2")
+            
+            
+        } else if (rec.state == UIGestureRecognizerState.Changed) {
+            
+            println("loc2")
+            
+            
+        } else if (rec.state == UIGestureRecognizerState.Ended) {
+            println("ended2")
+            
+        }
         
     }
     

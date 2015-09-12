@@ -102,7 +102,6 @@
 }
 
 
-
 - (NSString*)timeStringForTableCell
 {
     NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
@@ -120,7 +119,6 @@
     
     return realString;
 }
-
 
 
 - (NSInteger)friSatSunInteger

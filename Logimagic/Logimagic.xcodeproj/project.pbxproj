@@ -1,0 +1,570 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		166AC1B872C95954AF814CE2 /* libPods-Logimagic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C028785EB8CA712AEDB10380 /* libPods-Logimagic.a */; };
+		AAE874661BA48DB600C6D4E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE874651BA48DB600C6D4E4 /* AppDelegate.swift */; };
+		AAE874691BA48DB600C6D4E4 /* Logimagic.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AAE874671BA48DB600C6D4E4 /* Logimagic.xcdatamodeld */; };
+		AAE8746B1BA48DB600C6D4E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE8746A1BA48DB600C6D4E4 /* ViewController.swift */; };
+		AAE8746E1BA48DB600C6D4E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAE8746C1BA48DB600C6D4E4 /* Main.storyboard */; };
+		AAE874701BA48DB600C6D4E4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAE8746F1BA48DB600C6D4E4 /* Images.xcassets */; };
+		AAE874731BA48DB600C6D4E4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAE874711BA48DB600C6D4E4 /* LaunchScreen.xib */; };
+		AAE8747F1BA48DB600C6D4E4 /* LogimagicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE8747E1BA48DB600C6D4E4 /* LogimagicTests.swift */; };
+		AAE8748A1BA4A81000C6D4E4 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAE874881BA4A7F700C6D4E4 /* AVFoundation.framework */; };
+		AAE8748D1BA4B39200C6D4E4 /* LMLoginSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE8748B1BA4B39200C6D4E4 /* LMLoginSelectViewController.swift */; };
+		AAE8748E1BA4B39200C6D4E4 /* LMLoginSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAE8748C1BA4B39200C6D4E4 /* LMLoginSelectViewController.xib */; };
+		AAE874911BA4B49F00C6D4E4 /* LMLoginSelectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE8748F1BA4B49F00C6D4E4 /* LMLoginSelectCell.swift */; };
+		AAE874921BA4B49F00C6D4E4 /* LMLoginSelectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAE874901BA4B49F00C6D4E4 /* LMLoginSelectCell.xib */; };
+		AAE874991BA4C0DA00C6D4E4 /* LMAddAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE874971BA4C0DA00C6D4E4 /* LMAddAccountViewController.swift */; };
+		AAE8749A1BA4C0DA00C6D4E4 /* LMAddAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAE874981BA4C0DA00C6D4E4 /* LMAddAccountViewController.xib */; };
+		AAE8749D1BA4C5E900C6D4E4 /* LMAccountDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE8749B1BA4C5E900C6D4E4 /* LMAccountDetailsViewController.swift */; };
+		AAE8749E1BA4C5E900C6D4E4 /* LMAccountDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAE8749C1BA4C5E900C6D4E4 /* LMAccountDetailsViewController.xib */; };
+		AAE874A11BA4C5FB00C6D4E4 /* LMAddAccountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE8749F1BA4C5FB00C6D4E4 /* LMAddAccountCell.swift */; };
+		AAE874A21BA4C5FB00C6D4E4 /* LMAddAccountCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAE874A01BA4C5FB00C6D4E4 /* LMAddAccountCell.xib */; };
+		AAE874A51BA4CBA000C6D4E4 /* LMAccountDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE874A31BA4CBA000C6D4E4 /* LMAccountDetailsCell.swift */; };
+		AAE874A61BA4CBA000C6D4E4 /* LMAccountDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAE874A41BA4CBA000C6D4E4 /* LMAccountDetailsCell.xib */; };
+		AAE874A91BA4D64800C6D4E4 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAE874A71BA4D63900C6D4E4 /* LocalAuthentication.framework */; };
+		AAE874AB1BA4D87F00C6D4E4 /* LMFirebaseInterfacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE874AA1BA4D87F00C6D4E4 /* LMFirebaseInterfacer.swift */; };
+		AAE874AD1BA4D8BD00C6D4E4 /* LMAuthContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE874AC1BA4D8BD00C6D4E4 /* LMAuthContext.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AAE874791BA48DB600C6D4E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AAE874581BA48DB600C6D4E4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AAE8745F1BA48DB600C6D4E4;
+			remoteInfo = Logimagic;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		037DDE125FA29A424BB418E3 /* Pods-Logimagic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Logimagic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Logimagic/Pods-Logimagic.debug.xcconfig"; sourceTree = "<group>"; };
+		84496267213C04ACC1FEA02B /* Pods-Logimagic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Logimagic.release.xcconfig"; path = "Pods/Target Support Files/Pods-Logimagic/Pods-Logimagic.release.xcconfig"; sourceTree = "<group>"; };
+		AAE874601BA48DB600C6D4E4 /* Logimagic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Logimagic.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AAE874641BA48DB600C6D4E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AAE874651BA48DB600C6D4E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AAE874681BA48DB600C6D4E4 /* Logimagic.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Logimagic.xcdatamodel; sourceTree = "<group>"; };
+		AAE8746A1BA48DB600C6D4E4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AAE8746D1BA48DB600C6D4E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AAE8746F1BA48DB600C6D4E4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		AAE874721BA48DB600C6D4E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		AAE874781BA48DB600C6D4E4 /* LogimagicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LogimagicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AAE8747D1BA48DB600C6D4E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AAE8747E1BA48DB600C6D4E4 /* LogimagicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogimagicTests.swift; sourceTree = "<group>"; };
+		AAE874881BA4A7F700C6D4E4 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		AAE8748B1BA4B39200C6D4E4 /* LMLoginSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMLoginSelectViewController.swift; sourceTree = "<group>"; };
+		AAE8748C1BA4B39200C6D4E4 /* LMLoginSelectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LMLoginSelectViewController.xib; sourceTree = "<group>"; };
+		AAE8748F1BA4B49F00C6D4E4 /* LMLoginSelectCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMLoginSelectCell.swift; sourceTree = "<group>"; };
+		AAE874901BA4B49F00C6D4E4 /* LMLoginSelectCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LMLoginSelectCell.xib; sourceTree = "<group>"; };
+		AAE874971BA4C0DA00C6D4E4 /* LMAddAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMAddAccountViewController.swift; sourceTree = "<group>"; };
+		AAE874981BA4C0DA00C6D4E4 /* LMAddAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LMAddAccountViewController.xib; sourceTree = "<group>"; };
+		AAE8749B1BA4C5E900C6D4E4 /* LMAccountDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMAccountDetailsViewController.swift; sourceTree = "<group>"; };
+		AAE8749C1BA4C5E900C6D4E4 /* LMAccountDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LMAccountDetailsViewController.xib; sourceTree = "<group>"; };
+		AAE8749F1BA4C5FB00C6D4E4 /* LMAddAccountCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMAddAccountCell.swift; sourceTree = "<group>"; };
+		AAE874A01BA4C5FB00C6D4E4 /* LMAddAccountCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LMAddAccountCell.xib; sourceTree = "<group>"; };
+		AAE874A31BA4CBA000C6D4E4 /* LMAccountDetailsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMAccountDetailsCell.swift; sourceTree = "<group>"; };
+		AAE874A41BA4CBA000C6D4E4 /* LMAccountDetailsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LMAccountDetailsCell.xib; sourceTree = "<group>"; };
+		AAE874A71BA4D63900C6D4E4 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		AAE874AA1BA4D87F00C6D4E4 /* LMFirebaseInterfacer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMFirebaseInterfacer.swift; sourceTree = "<group>"; };
+		AAE874AC1BA4D8BD00C6D4E4 /* LMAuthContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMAuthContext.swift; sourceTree = "<group>"; };
+		C028785EB8CA712AEDB10380 /* libPods-Logimagic.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Logimagic.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AAE8745D1BA48DB600C6D4E4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAE874A91BA4D64800C6D4E4 /* LocalAuthentication.framework in Frameworks */,
+				AAE8748A1BA4A81000C6D4E4 /* AVFoundation.framework in Frameworks */,
+				166AC1B872C95954AF814CE2 /* libPods-Logimagic.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AAE874751BA48DB600C6D4E4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2566892CF3024089039508EC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C028785EB8CA712AEDB10380 /* libPods-Logimagic.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3FF22AE2765AE6539D0D5652 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				037DDE125FA29A424BB418E3 /* Pods-Logimagic.debug.xcconfig */,
+				84496267213C04ACC1FEA02B /* Pods-Logimagic.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AAE874571BA48DB600C6D4E4 = {
+			isa = PBXGroup;
+			children = (
+				AAE874621BA48DB600C6D4E4 /* Logimagic */,
+				AAE8747B1BA48DB600C6D4E4 /* LogimagicTests */,
+				AAE874611BA48DB600C6D4E4 /* Products */,
+				3FF22AE2765AE6539D0D5652 /* Pods */,
+				2566892CF3024089039508EC /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		AAE874611BA48DB600C6D4E4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AAE874601BA48DB600C6D4E4 /* Logimagic.app */,
+				AAE874781BA48DB600C6D4E4 /* LogimagicTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AAE874621BA48DB600C6D4E4 /* Logimagic */ = {
+			isa = PBXGroup;
+			children = (
+				AAE874651BA48DB600C6D4E4 /* AppDelegate.swift */,
+				AAE874AC1BA4D8BD00C6D4E4 /* LMAuthContext.swift */,
+				AAE874AA1BA4D87F00C6D4E4 /* LMFirebaseInterfacer.swift */,
+				AAE8746A1BA48DB600C6D4E4 /* ViewController.swift */,
+				AAE8746C1BA48DB600C6D4E4 /* Main.storyboard */,
+				AAE8748B1BA4B39200C6D4E4 /* LMLoginSelectViewController.swift */,
+				AAE8748C1BA4B39200C6D4E4 /* LMLoginSelectViewController.xib */,
+				AAE8748F1BA4B49F00C6D4E4 /* LMLoginSelectCell.swift */,
+				AAE874901BA4B49F00C6D4E4 /* LMLoginSelectCell.xib */,
+				AAE874971BA4C0DA00C6D4E4 /* LMAddAccountViewController.swift */,
+				AAE874981BA4C0DA00C6D4E4 /* LMAddAccountViewController.xib */,
+				AAE8749F1BA4C5FB00C6D4E4 /* LMAddAccountCell.swift */,
+				AAE874A01BA4C5FB00C6D4E4 /* LMAddAccountCell.xib */,
+				AAE8749B1BA4C5E900C6D4E4 /* LMAccountDetailsViewController.swift */,
+				AAE8749C1BA4C5E900C6D4E4 /* LMAccountDetailsViewController.xib */,
+				AAE874A31BA4CBA000C6D4E4 /* LMAccountDetailsCell.swift */,
+				AAE874A41BA4CBA000C6D4E4 /* LMAccountDetailsCell.xib */,
+				AAE8746F1BA48DB600C6D4E4 /* Images.xcassets */,
+				AAE874711BA48DB600C6D4E4 /* LaunchScreen.xib */,
+				AAE874671BA48DB600C6D4E4 /* Logimagic.xcdatamodeld */,
+				AAE874631BA48DB600C6D4E4 /* Supporting Files */,
+			);
+			path = Logimagic;
+			sourceTree = "<group>";
+		};
+		AAE874631BA48DB600C6D4E4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AAE874A71BA4D63900C6D4E4 /* LocalAuthentication.framework */,
+				AAE874881BA4A7F700C6D4E4 /* AVFoundation.framework */,
+				AAE874641BA48DB600C6D4E4 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AAE8747B1BA48DB600C6D4E4 /* LogimagicTests */ = {
+			isa = PBXGroup;
+			children = (
+				AAE8747E1BA48DB600C6D4E4 /* LogimagicTests.swift */,
+				AAE8747C1BA48DB600C6D4E4 /* Supporting Files */,
+			);
+			path = LogimagicTests;
+			sourceTree = "<group>";
+		};
+		AAE8747C1BA48DB600C6D4E4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AAE8747D1BA48DB600C6D4E4 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AAE8745F1BA48DB600C6D4E4 /* Logimagic */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AAE874821BA48DB600C6D4E4 /* Build configuration list for PBXNativeTarget "Logimagic" */;
+			buildPhases = (
+				1DAA28118CF973BA182ECA20 /* Check Pods Manifest.lock */,
+				AAE8745C1BA48DB600C6D4E4 /* Sources */,
+				AAE8745D1BA48DB600C6D4E4 /* Frameworks */,
+				AAE8745E1BA48DB600C6D4E4 /* Resources */,
+				2B38B51232212A49FDA3A31F /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Logimagic;
+			productName = Logimagic;
+			productReference = AAE874601BA48DB600C6D4E4 /* Logimagic.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AAE874771BA48DB600C6D4E4 /* LogimagicTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AAE874851BA48DB600C6D4E4 /* Build configuration list for PBXNativeTarget "LogimagicTests" */;
+			buildPhases = (
+				AAE874741BA48DB600C6D4E4 /* Sources */,
+				AAE874751BA48DB600C6D4E4 /* Frameworks */,
+				AAE874761BA48DB600C6D4E4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AAE8747A1BA48DB600C6D4E4 /* PBXTargetDependency */,
+			);
+			name = LogimagicTests;
+			productName = LogimagicTests;
+			productReference = AAE874781BA48DB600C6D4E4 /* LogimagicTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AAE874581BA48DB600C6D4E4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = "Si Te Feng";
+				TargetAttributes = {
+					AAE8745F1BA48DB600C6D4E4 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					AAE874771BA48DB600C6D4E4 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = AAE8745F1BA48DB600C6D4E4;
+					};
+				};
+			};
+			buildConfigurationList = AAE8745B1BA48DB600C6D4E4 /* Build configuration list for PBXProject "Logimagic" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AAE874571BA48DB600C6D4E4;
+			productRefGroup = AAE874611BA48DB600C6D4E4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AAE8745F1BA48DB600C6D4E4 /* Logimagic */,
+				AAE874771BA48DB600C6D4E4 /* LogimagicTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AAE8745E1BA48DB600C6D4E4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAE874921BA4B49F00C6D4E4 /* LMLoginSelectCell.xib in Resources */,
+				AAE8746E1BA48DB600C6D4E4 /* Main.storyboard in Resources */,
+				AAE8748E1BA4B39200C6D4E4 /* LMLoginSelectViewController.xib in Resources */,
+				AAE8749E1BA4C5E900C6D4E4 /* LMAccountDetailsViewController.xib in Resources */,
+				AAE874A21BA4C5FB00C6D4E4 /* LMAddAccountCell.xib in Resources */,
+				AAE8749A1BA4C0DA00C6D4E4 /* LMAddAccountViewController.xib in Resources */,
+				AAE874731BA48DB600C6D4E4 /* LaunchScreen.xib in Resources */,
+				AAE874701BA48DB600C6D4E4 /* Images.xcassets in Resources */,
+				AAE874A61BA4CBA000C6D4E4 /* LMAccountDetailsCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AAE874761BA48DB600C6D4E4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1DAA28118CF973BA182ECA20 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		2B38B51232212A49FDA3A31F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Logimagic/Pods-Logimagic-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AAE8745C1BA48DB600C6D4E4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAE874A11BA4C5FB00C6D4E4 /* LMAddAccountCell.swift in Sources */,
+				AAE8749D1BA4C5E900C6D4E4 /* LMAccountDetailsViewController.swift in Sources */,
+				AAE874991BA4C0DA00C6D4E4 /* LMAddAccountViewController.swift in Sources */,
+				AAE8746B1BA48DB600C6D4E4 /* ViewController.swift in Sources */,
+				AAE874691BA48DB600C6D4E4 /* Logimagic.xcdatamodeld in Sources */,
+				AAE874661BA48DB600C6D4E4 /* AppDelegate.swift in Sources */,
+				AAE874911BA4B49F00C6D4E4 /* LMLoginSelectCell.swift in Sources */,
+				AAE8748D1BA4B39200C6D4E4 /* LMLoginSelectViewController.swift in Sources */,
+				AAE874AB1BA4D87F00C6D4E4 /* LMFirebaseInterfacer.swift in Sources */,
+				AAE874A51BA4CBA000C6D4E4 /* LMAccountDetailsCell.swift in Sources */,
+				AAE874AD1BA4D8BD00C6D4E4 /* LMAuthContext.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AAE874741BA48DB600C6D4E4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAE8747F1BA48DB600C6D4E4 /* LogimagicTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AAE8747A1BA48DB600C6D4E4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AAE8745F1BA48DB600C6D4E4 /* Logimagic */;
+			targetProxy = AAE874791BA48DB600C6D4E4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AAE8746C1BA48DB600C6D4E4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AAE8746D1BA48DB600C6D4E4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AAE874711BA48DB600C6D4E4 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AAE874721BA48DB600C6D4E4 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AAE874801BA48DB600C6D4E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AAE874811BA48DB600C6D4E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AAE874831BA48DB600C6D4E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 037DDE125FA29A424BB418E3 /* Pods-Logimagic.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Logimagic/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		AAE874841BA48DB600C6D4E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84496267213C04ACC1FEA02B /* Pods-Logimagic.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Logimagic/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		AAE874861BA48DB600C6D4E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = LogimagicTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Logimagic.app/Logimagic";
+			};
+			name = Debug;
+		};
+		AAE874871BA48DB600C6D4E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = LogimagicTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Logimagic.app/Logimagic";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AAE8745B1BA48DB600C6D4E4 /* Build configuration list for PBXProject "Logimagic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AAE874801BA48DB600C6D4E4 /* Debug */,
+				AAE874811BA48DB600C6D4E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AAE874821BA48DB600C6D4E4 /* Build configuration list for PBXNativeTarget "Logimagic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AAE874831BA48DB600C6D4E4 /* Debug */,
+				AAE874841BA48DB600C6D4E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AAE874851BA48DB600C6D4E4 /* Build configuration list for PBXNativeTarget "LogimagicTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AAE874861BA48DB600C6D4E4 /* Debug */,
+				AAE874871BA48DB600C6D4E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		AAE874671BA48DB600C6D4E4 /* Logimagic.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AAE874681BA48DB600C6D4E4 /* Logimagic.xcdatamodel */,
+			);
+			currentVersion = AAE874681BA48DB600C6D4E4 /* Logimagic.xcdatamodel */;
+			path = Logimagic.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = AAE874581BA48DB600C6D4E4 /* Project object */;
+}
