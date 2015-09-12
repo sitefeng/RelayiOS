@@ -14,6 +14,11 @@
 		AAE8743A1BA3E5D100C6D4E4 /* LiveChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE874391BA3E5D100C6D4E4 /* LiveChatTests.swift */; };
 		AAE874461BA3EC8300C6D4E4 /* LCMainChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE874441BA3EC8300C6D4E4 /* LCMainChatViewController.swift */; };
 		AAE874471BA3EC8300C6D4E4 /* LCMainChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAE874451BA3EC8300C6D4E4 /* LCMainChatViewController.xib */; };
+		AAE8744A1BA3FC3C00C6D4E4 /* LCSessionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE874481BA3FC3C00C6D4E4 /* LCSessionsViewController.swift */; };
+		AAE8744B1BA3FC3C00C6D4E4 /* LCSessionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAE874491BA3FC3C00C6D4E4 /* LCSessionsViewController.xib */; };
+		AAE8744D1BA3FC7E00C6D4E4 /* LCMainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE8744C1BA3FC7E00C6D4E4 /* LCMainNavigationController.swift */; };
+		AAE8744F1BA46D2300C6D4E4 /* LCChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE8744E1BA46D2300C6D4E4 /* LCChatMessage.swift */; };
+		AAE874531BA46FFE00C6D4E4 /* NSDate+HNConvenience.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE874521BA46FFE00C6D4E4 /* NSDate+HNConvenience.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +43,13 @@
 		AAE874391BA3E5D100C6D4E4 /* LiveChatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveChatTests.swift; sourceTree = "<group>"; };
 		AAE874441BA3EC8300C6D4E4 /* LCMainChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LCMainChatViewController.swift; sourceTree = "<group>"; };
 		AAE874451BA3EC8300C6D4E4 /* LCMainChatViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LCMainChatViewController.xib; sourceTree = "<group>"; };
+		AAE874481BA3FC3C00C6D4E4 /* LCSessionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LCSessionsViewController.swift; sourceTree = "<group>"; };
+		AAE874491BA3FC3C00C6D4E4 /* LCSessionsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LCSessionsViewController.xib; sourceTree = "<group>"; };
+		AAE8744C1BA3FC7E00C6D4E4 /* LCMainNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LCMainNavigationController.swift; sourceTree = "<group>"; };
+		AAE8744E1BA46D2300C6D4E4 /* LCChatMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LCChatMessage.swift; sourceTree = "<group>"; };
+		AAE874501BA46FFD00C6D4E4 /* LiveChat-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LiveChat-Bridging-Header.h"; sourceTree = "<group>"; };
+		AAE874511BA46FFE00C6D4E4 /* NSDate+HNConvenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+HNConvenience.h"; sourceTree = "<group>"; };
+		AAE874521BA46FFE00C6D4E4 /* NSDate+HNConvenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+HNConvenience.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,12 +92,14 @@
 			isa = PBXGroup;
 			children = (
 				AAE874201BA3E5D100C6D4E4 /* AppDelegate.swift */,
-				AAE874441BA3EC8300C6D4E4 /* LCMainChatViewController.swift */,
-				AAE874451BA3EC8300C6D4E4 /* LCMainChatViewController.xib */,
+				AAE874551BA4701500C6D4E4 /* Model */,
+				AAE874541BA4700E00C6D4E4 /* Convenience */,
+				AAE874561BA4701D00C6D4E4 /* Controllers */,
 				AAE8742A1BA3E5D100C6D4E4 /* Images.xcassets */,
 				AAE8742C1BA3E5D100C6D4E4 /* LaunchScreen.xib */,
 				AAE874221BA3E5D100C6D4E4 /* LiveChat.xcdatamodeld */,
 				AAE8741E1BA3E5D100C6D4E4 /* Supporting Files */,
+				AAE874501BA46FFD00C6D4E4 /* LiveChat-Bridging-Header.h */,
 			);
 			path = LiveChat;
 			sourceTree = "<group>";
@@ -113,6 +127,35 @@
 				AAE874381BA3E5D100C6D4E4 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AAE874541BA4700E00C6D4E4 /* Convenience */ = {
+			isa = PBXGroup;
+			children = (
+				AAE874511BA46FFE00C6D4E4 /* NSDate+HNConvenience.h */,
+				AAE874521BA46FFE00C6D4E4 /* NSDate+HNConvenience.m */,
+			);
+			name = Convenience;
+			sourceTree = "<group>";
+		};
+		AAE874551BA4701500C6D4E4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AAE8744E1BA46D2300C6D4E4 /* LCChatMessage.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		AAE874561BA4701D00C6D4E4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AAE8744C1BA3FC7E00C6D4E4 /* LCMainNavigationController.swift */,
+				AAE874481BA3FC3C00C6D4E4 /* LCSessionsViewController.swift */,
+				AAE874491BA3FC3C00C6D4E4 /* LCSessionsViewController.xib */,
+				AAE874441BA3EC8300C6D4E4 /* LCMainChatViewController.swift */,
+				AAE874451BA3EC8300C6D4E4 /* LCMainChatViewController.xib */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +240,7 @@
 			files = (
 				AAE874471BA3EC8300C6D4E4 /* LCMainChatViewController.xib in Resources */,
 				AAE8742E1BA3E5D100C6D4E4 /* LaunchScreen.xib in Resources */,
+				AAE8744B1BA3FC3C00C6D4E4 /* LCSessionsViewController.xib in Resources */,
 				AAE8742B1BA3E5D100C6D4E4 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -217,7 +261,11 @@
 			files = (
 				AAE874211BA3E5D100C6D4E4 /* AppDelegate.swift in Sources */,
 				AAE874461BA3EC8300C6D4E4 /* LCMainChatViewController.swift in Sources */,
+				AAE8744F1BA46D2300C6D4E4 /* LCChatMessage.swift in Sources */,
+				AAE8744A1BA3FC3C00C6D4E4 /* LCSessionsViewController.swift in Sources */,
 				AAE874241BA3E5D100C6D4E4 /* LiveChat.xcdatamodeld in Sources */,
+				AAE8744D1BA3FC7E00C6D4E4 /* LCMainNavigationController.swift in Sources */,
+				AAE874531BA46FFE00C6D4E4 /* NSDate+HNConvenience.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,10 +384,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = LiveChat/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LiveChat/LiveChat-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -347,10 +398,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = LiveChat/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LiveChat/LiveChat-Bridging-Header.h";
 			};
 			name = Release;
 		};

@@ -14,13 +14,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    var navController: LCMainNavigationController!
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        let chatViewController = UIViewController(nibName: "LCMainChatViewController", bundle: nil)
+        let chatViewController = LCMainChatViewController(nibName: "LCMainChatViewController", bundle: nil)
+        self.navController = LCMainNavigationController(rootViewController:chatViewController)
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        self.window?.rootViewController = chatViewController
+        self.window?.rootViewController = self.navController
         self.window?.makeKeyAndVisible()
         
         return true

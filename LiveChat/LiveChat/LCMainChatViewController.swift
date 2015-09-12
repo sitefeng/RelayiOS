@@ -8,28 +8,59 @@
 
 import UIKit
 
-class LCMainChatViewController: UIViewController {
-
+class LCMainChatViewController: UIViewController, UIGestureRecognizerDelegate {
+    
+    @IBOutlet weak var drawScrollView: UIScrollView!
+    
+    var drawRec = UIPanGestureRecognizer()
+    var scrollRec = UIPanGestureRecognizer()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        self.title = "Chat"
+        
+        drawScrollView.backgroundColor = UIColor.blackColor()
+        
+        // DrawRec. Use only one finger to draw
+        drawRec.addTarget(self, action: "drawed:")
+        drawRec.maximumNumberOfTouches = 1
+        drawRec.delegate = self
+        self.drawScrollView.addGestureRecognizer(drawRec)
+        
+        // ScrollRec. Use 2 fingers to scroll down
+        scrollRec.addTarget(self, action: "scrolled:")
+        scrollRec.minimumNumberOfTouches = 2
+        scrollRec.delegate = self
+        self.drawScrollView.addGestureRecognizer(scrollRec)
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    func drawed(rec: UIPanGestureRecognizer) {
+        if (rec.state == UIGestureRecognizerState.Began) {
+            
+            
+            
+        } else if (rec.state == UIGestureRecognizerState.Changed) {
+            
+            
+            
+        } else if (rec.state == UIGestureRecognizerState.Ended) {
+            
+            
+        }
+        
     }
-    */
-
+    
+    
+    func scrolled(rec: UIPanGestureRecognizer) {
+        
+        
+        
+    }
+    
+    
+    
 }

@@ -1,78 +1,64 @@
-DrawBoard
-
-Live Chat
-
-"livechat": {
-	"users": {
-		"RandomId123": {
-			"userName": "Abdul-Rahman",
-			"userId": "RandomId123"
-		},
-		"anotherId413": {
-			"userName": "Jasmine Lee",
-			"userId": "anotherId413"
-		}
+{ "users": {
+	"RandomId123": {
+		"userName": "Abdul-Rahman",
+		"userId": "RandomId123"
 	},
-	"messages": {
-		"sessionId133": {
-			"users": {
-				"0": "RandomId123",
-				"1": "anotherId413",
-			},
-			"messages": {
-				"FBGeneratedRandId1": {
-					"userId": "RandomId123",
-					"text": "Hi there, I'm Abdul-Rahman, how are ya",
-					"time": "2014-08-07T22:18:47-04:00"
-					// ISO compatible Timestamp
-				}, 
-				"frame": {
-					"x": 123.34,
-					"y": 523.52,
-					"w": 125.4,
-					"h": 40.3
-				}
-			},
-			"curves": {
-				"autoId624": {
-					"userId": "RandomId123",
-					"bezPts": {
-						"0": {
-							"x": 246.32,
-							"y": 543.15
-						}, 
-						"1": {
-							"x": 223.42,
-							"y": 748.34
-						}
-					}
-				}, 
-				"autoId205": {
-					"userId": "RandomId123",
-					"bezPts": {
-						"0": {
-							"x": 342.32,
-							"y": 743.15
-						}, 
-						"1": {
-							"x": 277.42,
-							"y": 648.34
-						}
+	"anotherId413": {
+		"userName": "Jasmine Lee",
+		"userId": "anotherId413"
+	}
+},
+"sessions": {
+	"sessionId133": {
+		"users": {
+			"0": "RandomId123",
+			"1": "anotherId413"
+		},
+		"lastPt": {
+			"x": 41.53,
+			"y": 53.32
+		},
+		"messages": {
+			"FBGeneratedRandId1": {
+				"userId": "RandomId123",
+				"text": "Hi there, I'm Abdul-Rahman, how are ya",
+				"time": "2014-08-07T22:18:47-04:00"
+			}, 
+			"frame": {
+				"x": 23.34,
+				"y": 23.52,
+				"w": 25.4,
+				"h": 10.3
+			}
+		},
+		"curves": {
+			"autoId624": {
+				"userId": "RandomId123",
+				"bezPts": {
+					"0": {
+						"x": 46.32,
+						"y": 43.15
+					}, 
+					"1": {
+						"x": 23.42,
+						"y": 48.34
 					}
 				}
-
+			}, 
+			"autoId205": {
+				"userId": "RandomId123",
+				"bezPts": {
+					"0": {
+						"x": 42.32,
+						"y": 43.15
+					}, 
+					"1": {
+						"x": 77.42,
+						"y": 48.34
+					}
+				}
 			}
 		}
-	},
-
-
-
-
+	}
 }
-
-
-
-
-
-
-
+}

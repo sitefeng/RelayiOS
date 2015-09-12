@@ -4,9 +4,9 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LCMainChatViewController" customModule="LiveChat" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LCSessionsViewController" customModule="LiveChat" customModuleProvider="target">
             <connections>
-                <outlet property="drawScrollView" destination="oaC-8H-GEr" id="ufq-2f-WvP"/>
+                <outlet property="tableView" destination="QPT-mG-hAO" id="gIz-Rh-gCr"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -15,16 +15,17 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oaC-8H-GEr">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="QPT-mG-hAO">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                </scrollView>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="oaC-8H-GEr" secondAttribute="bottom" id="At6-aM-ZOO"/>
-                <constraint firstAttribute="trailing" secondItem="oaC-8H-GEr" secondAttribute="trailing" id="Pzp-JF-0rt"/>
-                <constraint firstItem="oaC-8H-GEr" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="cqo-AP-9sa"/>
-                <constraint firstItem="oaC-8H-GEr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hxq-qY-oJU"/>
+                <constraint firstAttribute="trailing" secondItem="QPT-mG-hAO" secondAttribute="trailing" id="01E-Ne-sYY"/>
+                <constraint firstAttribute="bottom" secondItem="QPT-mG-hAO" secondAttribute="bottom" id="NMX-Xv-XRR"/>
+                <constraint firstItem="QPT-mG-hAO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="TaZ-eD-gha"/>
+                <constraint firstItem="QPT-mG-hAO" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="eZ2-je-P7f"/>
             </constraints>
         </view>
     </objects>
