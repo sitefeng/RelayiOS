@@ -23,7 +23,7 @@ class LMAddAccountViewController: UIViewController, UITableViewDelegate, UITable
         
         // Cancel Button
         var cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Done, target: self, action: "cancelButtonPressed")
-        self.navigationItem.rightBarButtonItem = cancelButton
+        self.navigationItem.leftBarButtonItem = cancelButton
 
         tableView.delegate = self
         tableView.dataSource = self

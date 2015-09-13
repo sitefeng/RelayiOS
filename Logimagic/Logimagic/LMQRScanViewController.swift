@@ -1,16 +1,18 @@
 //
-//  ViewController.swift
+//  LMQRScanViewController.swift
 //  Logimagic
 //
-//  Created by Si Te Feng on 9/12/15.
+//  Created by Si Te Feng on 9/13/15.
 //  Copyright (c) 2015 Si Te Feng. All rights reserved.
 //
 
 import UIKit
 import AVFoundation
 
-class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
-
+class LMQRScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
+    
+    var isPopupPresented: Bool = false
+    
     var device: AVCaptureDevice!
     var session: AVCaptureSession!
     
@@ -23,7 +25,14 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
+        self.title = "Scan QR"
+        
+        if (isPopupPresented) {
+            var cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Done, target: self, action: "cancelButtonPressed")
+            self.navigationItem.leftBarButtonItem = cancelButton
+        }
+        
         self.device = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
         self.session = AVCaptureSession()
         
@@ -32,7 +41,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         
         self.output = AVCaptureMetadataOutput()
         self.session.addOutput(self.output)
-
+        
         let queue: dispatch_queue_t = dispatch_queue_create("MyQueue", nil)
         self.output.setMetadataObjectsDelegate(self, queue: queue)
         
@@ -52,7 +61,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         
         self.session.startRunning()
     }
-
+    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -67,14 +76,18 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
             self.stopQRSession()
             
             let authContext = LMAuthContext()
-            authContext.deviceId = deviceIdString
+            authContext.addDeviceId(deviceIdString)
             
-            let loginSelectVC = LMLoginSelectViewController(nibName: "LMLoginSelectViewController", bundle: nil)
-            let loginNavVC = UINavigationController(rootViewController: loginSelectVC)
-            self.presentViewController(loginNavVC, animated: true, completion: nil)
+            if (!isPopupPresented) {
+                let loginSelectVC = LMLoginSelectViewController(nibName: "LMLoginSelectViewController", bundle: nil)
+                let loginNavVC = UINavigationController(rootViewController: loginSelectVC)
+                self.presentViewController(loginNavVC, animated: true, completion: nil)
+            } else {
+                self.dismissViewControllerAnimated(true, completion: nil)
+            }
         }
     }
-
+    
     
     func stopQRSession() {
         self.session.stopRunning()
@@ -82,5 +95,9 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         self.captureLayer.removeFromSuperlayer()
     }
     
+    
+    func cancelButtonPressed() {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
 }
-

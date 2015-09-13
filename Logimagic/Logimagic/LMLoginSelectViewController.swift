@@ -12,14 +12,17 @@ import LocalAuthentication
 class LMLoginSelectViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     let kLoginSelectCellId = "kLoginSelectCellId"
+    let kDeviceCellId = "kDeviceCellId"
     
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var touchIdImage: UIImageView!
+
+    @IBOutlet weak var serviceTableView: UITableView!
+    @IBOutlet weak var deviceTableView: UITableView!
     
     var accounts: [LMAccount] = []
     var deviceIds: [String] = []
     
-    var selectedIndexPath: NSIndexPath?
+    var selectedServiceIndexPath: NSIndexPath?
+    var selectedDeviceIndexPath: NSIndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,17 +36,23 @@ class LMLoginSelectViewController: UIViewController, UITableViewDelegate, UITabl
         let addNavItem = UIBarButtonItem(customView: addButton)
         self.navigationItem.rightBarButtonItem = addNavItem
         
-        // Touch ID
-        touchIdImage.hidden = false
+        
+        var addDevice = UIBarButtonItem(title: "New Device", style: UIBarButtonItemStyle.Plain, target: self, action: "addDevicePressed")
+        self.navigationItem.leftBarButtonItem = addDevice
+        
         
         // TableView
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.rowHeight = LMLoginSelectCell.kCellHeight
-        tableView.registerNib(UINib(nibName: "LMLoginSelectCell", bundle: nil), forCellReuseIdentifier: kLoginSelectCellId)
+        serviceTableView.delegate = self
+        serviceTableView.dataSource = self
+        serviceTableView.rowHeight = LMLoginSelectCell.kCellHeight
+        serviceTableView.registerNib(UINib(nibName: "LMLoginSelectCell", bundle: nil), forCellReuseIdentifier: kLoginSelectCellId)
         
-        // Get all data
-        self.deviceIds = [LMAuthContext().deviceId]
+        
+        // Devices
+        deviceTableView.delegate = self
+        deviceTableView.dataSource = self
+        deviceTableView.rowHeight = LMLoginSelectCell.kCellHeight
+        deviceTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: kDeviceCellId)
         
     }
     
@@ -52,6 +61,9 @@ class LMLoginSelectViewController: UIViewController, UITableViewDelegate, UITabl
         super.viewWillAppear(animated)
         
         self.reloadData()
+        
+        deviceTableView.selectRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0), animated: false, scrollPosition: UITableViewScrollPosition.Top)
+        self.selectedDeviceIndexPath = NSIndexPath(forRow: 0, inSection: 0)
     }
 
     
@@ -62,29 +74,69 @@ class LMLoginSelectViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     
+    func addDevicePressed() {
+        var qrVC = LMQRScanViewController(nibName: "LMQRScanViewController", bundle: nil)
+        qrVC.isPopupPresented = true
+        
+        let navController = UINavigationController(rootViewController: qrVC)
+        self.presentViewController(navController, animated: true, completion: nil)
+        
+    }
+    
+    // MARK: Table View
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.accounts.count
+        if serviceTableView == tableView {
+            return self.accounts.count
+        } else {
+            return self.deviceIds.count
+        }
     }
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var loginSelectCell = self.tableView.dequeueReusableCellWithIdentifier(kLoginSelectCellId) as! LMLoginSelectCell
-        let account = self.accounts[indexPath.row]
-        
-        loginSelectCell.setupCell(account.name, type: account.type, email: account.email)
         
         let backView = UIView(frame: CGRectZero)
         backView.backgroundColor = UIColor.blueColor().colorWithAlphaComponent(0.3)
-        loginSelectCell.selectedBackgroundView = backView
         
-        return loginSelectCell
+        if serviceTableView == tableView {
+            var loginSelectCell = self.serviceTableView.dequeueReusableCellWithIdentifier(kLoginSelectCellId) as! LMLoginSelectCell
+            let account = self.accounts[indexPath.row]
+            
+            loginSelectCell.setupCell(account.name, type: account.type, email: account.email)
+            
+            loginSelectCell.selectedBackgroundView = backView
+            
+            return loginSelectCell
+        
+        } else {
+            
+            var cell: UITableViewCell = self.deviceTableView.dequeueReusableCellWithIdentifier(kDeviceCellId, forIndexPath: indexPath) as! UITableViewCell
+            
+            cell.textLabel?.text = self.deviceIds[indexPath.row]
+            cell.selectedBackgroundView = backView
+            return cell
+        }
     }
     
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        selectedIndexPath = indexPath
-        self.authenticateWithTouchId()
-        self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        if serviceTableView == tableView {
+            if self.selectedDeviceIndexPath != nil {
+            
+                selectedServiceIndexPath = indexPath
+                self.authenticateWithTouchId()
+                self.serviceTableView.deselectRowAtIndexPath(indexPath, animated: true)
+            } else {
+                var alertVC = UIAlertController(title: "Cannot Login", message: "Please add new chrome extension connection via QR Scanner", preferredStyle: UIAlertControllerStyle.Alert)
+                alertVC.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alertVC, animated: true, completion: nil)
+            }
+        } else {
+            self.selectedDeviceIndexPath = indexPath
+        }
+        
     }
     
     
@@ -93,13 +145,31 @@ class LMLoginSelectViewController: UIViewController, UITableViewDelegate, UITabl
     }
 
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if (editingStyle == UITableViewCellEditingStyle.Delete) {
+        if (editingStyle != UITableViewCellEditingStyle.Delete) {
+            return
+        }
+        
+        if serviceTableView == tableView {
             let account = self.accounts[indexPath.row]
             LMCoreDataHelper.removeAccountFromCoreData(account)
             
-            self.reloadData()
+            
+        } else {
+            let deviceId = self.deviceIds[indexPath.row]
+            LMAuthContext().removeDeviceId(deviceId)
+            
         }
         
+        self.reloadData()
+        
+    }
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if tableView == serviceTableView {
+            return "Social Accounts"
+        } else {
+            return "Chrome Extension Devices"
+        }
     }
     
     
@@ -108,7 +178,9 @@ class LMLoginSelectViewController: UIViewController, UITableViewDelegate, UITabl
     func reloadData() {
         
         self.accounts = LMCoreDataHelper.getAllAccounts()
-        self.tableView.reloadData()
+        self.deviceIds = LMAuthContext().deviceIds
+        self.serviceTableView.reloadData()
+        self.deviceTableView.reloadData()
     }
     
     
@@ -140,15 +212,17 @@ class LMLoginSelectViewController: UIViewController, UITableViewDelegate, UITabl
     
     func requestLogin() {
         
-        if selectedIndexPath != nil {
-            let account = self.accounts[selectedIndexPath!.row]
-            let deviceId = self.deviceIds[selectedIndexPath!.section]
+        if selectedServiceIndexPath != nil && selectedDeviceIndexPath != nil {
+            let account = self.accounts[selectedServiceIndexPath!.row]
+            let deviceId = self.deviceIds[selectedDeviceIndexPath!.row]
             LMFirebaseInterfacer.sendLoginInfo(deviceId, serviceType: account.type, username: account.email, password: account.password)
             
-            self.selectedIndexPath = nil;
+            self.selectedServiceIndexPath = nil;
             
         } else {
-            println("No Row Selected")
+            var alertVC = UIAlertController(title: "Cannot Login", message: "Please Select your Device and Social Account", preferredStyle: UIAlertControllerStyle.Alert)
+            alertVC.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alertVC, animated: true, completion: nil)
         }
         
     }

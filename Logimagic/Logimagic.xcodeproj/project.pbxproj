@@ -10,8 +10,6 @@
 		166AC1B872C95954AF814CE2 /* libPods-Logimagic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C028785EB8CA712AEDB10380 /* libPods-Logimagic.a */; };
 		AAE874661BA48DB600C6D4E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE874651BA48DB600C6D4E4 /* AppDelegate.swift */; };
 		AAE874691BA48DB600C6D4E4 /* Logimagic.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AAE874671BA48DB600C6D4E4 /* Logimagic.xcdatamodeld */; };
-		AAE8746B1BA48DB600C6D4E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE8746A1BA48DB600C6D4E4 /* ViewController.swift */; };
-		AAE8746E1BA48DB600C6D4E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAE8746C1BA48DB600C6D4E4 /* Main.storyboard */; };
 		AAE874701BA48DB600C6D4E4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAE8746F1BA48DB600C6D4E4 /* Images.xcassets */; };
 		AAE874731BA48DB600C6D4E4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAE874711BA48DB600C6D4E4 /* LaunchScreen.xib */; };
 		AAE8747F1BA48DB600C6D4E4 /* LogimagicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE8747E1BA48DB600C6D4E4 /* LogimagicTests.swift */; };
@@ -34,6 +32,8 @@
 		AAE874B61BA51AC400C6D4E4 /* LMCoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE874B51BA51AC400C6D4E4 /* LMCoreDataHelper.swift */; };
 		AAE874B81BA51ADB00C6D4E4 /* LMAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE874B71BA51ADB00C6D4E4 /* LMAccount.swift */; };
 		AAE874BA1BA51EA900C6D4E4 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE874B91BA51EA900C6D4E4 /* Account.swift */; };
+		AAE874BE1BA55EB500C6D4E4 /* LMQRScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE874BC1BA55EB500C6D4E4 /* LMQRScanViewController.swift */; };
+		AAE874BF1BA55EB500C6D4E4 /* LMQRScanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAE874BD1BA55EB500C6D4E4 /* LMQRScanViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,8 +53,6 @@
 		AAE874641BA48DB600C6D4E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AAE874651BA48DB600C6D4E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AAE874681BA48DB600C6D4E4 /* Logimagic.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Logimagic.xcdatamodel; sourceTree = "<group>"; };
-		AAE8746A1BA48DB600C6D4E4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		AAE8746D1BA48DB600C6D4E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AAE8746F1BA48DB600C6D4E4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		AAE874721BA48DB600C6D4E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		AAE874781BA48DB600C6D4E4 /* LogimagicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LogimagicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,6 +77,8 @@
 		AAE874B51BA51AC400C6D4E4 /* LMCoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMCoreDataHelper.swift; sourceTree = "<group>"; };
 		AAE874B71BA51ADB00C6D4E4 /* LMAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMAccount.swift; sourceTree = "<group>"; };
 		AAE874B91BA51EA900C6D4E4 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Account.swift; path = ../Account.swift; sourceTree = "<group>"; };
+		AAE874BC1BA55EB500C6D4E4 /* LMQRScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMQRScanViewController.swift; sourceTree = "<group>"; };
+		AAE874BD1BA55EB500C6D4E4 /* LMQRScanViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LMQRScanViewController.xib; sourceTree = "<group>"; };
 		C028785EB8CA712AEDB10380 /* libPods-Logimagic.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Logimagic.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -146,8 +146,8 @@
 				AAE874651BA48DB600C6D4E4 /* AppDelegate.swift */,
 				AAE874B21BA50A6200C6D4E4 /* ManagedObjects */,
 				AAE874B31BA50A7900C6D4E4 /* Utilities */,
-				AAE8746A1BA48DB600C6D4E4 /* ViewController.swift */,
-				AAE8746C1BA48DB600C6D4E4 /* Main.storyboard */,
+				AAE874BC1BA55EB500C6D4E4 /* LMQRScanViewController.swift */,
+				AAE874BD1BA55EB500C6D4E4 /* LMQRScanViewController.xib */,
 				AAE8748B1BA4B39200C6D4E4 /* LMLoginSelectViewController.swift */,
 				AAE8748C1BA4B39200C6D4E4 /* LMLoginSelectViewController.xib */,
 				AAE8748F1BA4B49F00C6D4E4 /* LMLoginSelectCell.swift */,
@@ -297,9 +297,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAE874921BA4B49F00C6D4E4 /* LMLoginSelectCell.xib in Resources */,
-				AAE8746E1BA48DB600C6D4E4 /* Main.storyboard in Resources */,
 				AAE8748E1BA4B39200C6D4E4 /* LMLoginSelectViewController.xib in Resources */,
 				AAE8749E1BA4C5E900C6D4E4 /* LMAccountDetailsViewController.xib in Resources */,
+				AAE874BF1BA55EB500C6D4E4 /* LMQRScanViewController.xib in Resources */,
 				AAE874A21BA4C5FB00C6D4E4 /* LMAddAccountCell.xib in Resources */,
 				AAE8749A1BA4C0DA00C6D4E4 /* LMAddAccountViewController.xib in Resources */,
 				AAE874731BA48DB600C6D4E4 /* LaunchScreen.xib in Resources */,
@@ -358,9 +358,9 @@
 				AAE874B81BA51ADB00C6D4E4 /* LMAccount.swift in Sources */,
 				AAE874A11BA4C5FB00C6D4E4 /* LMAddAccountCell.swift in Sources */,
 				AAE8749D1BA4C5E900C6D4E4 /* LMAccountDetailsViewController.swift in Sources */,
+				AAE874BE1BA55EB500C6D4E4 /* LMQRScanViewController.swift in Sources */,
 				AAE874991BA4C0DA00C6D4E4 /* LMAddAccountViewController.swift in Sources */,
 				AAE874B61BA51AC400C6D4E4 /* LMCoreDataHelper.swift in Sources */,
-				AAE8746B1BA48DB600C6D4E4 /* ViewController.swift in Sources */,
 				AAE874691BA48DB600C6D4E4 /* Logimagic.xcdatamodeld in Sources */,
 				AAE874661BA48DB600C6D4E4 /* AppDelegate.swift in Sources */,
 				AAE874911BA4B49F00C6D4E4 /* LMLoginSelectCell.swift in Sources */,
@@ -391,14 +391,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		AAE8746C1BA48DB600C6D4E4 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AAE8746D1BA48DB600C6D4E4 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		AAE874711BA48DB600C6D4E4 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
