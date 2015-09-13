@@ -27,7 +27,7 @@ class LMFirebaseInterfacer: NSObject {
     
     class func getDeviceName(deviceId: String, callback: ((String) -> Void)) {
         
-        var ref = Firebase(url: kDevicesURL + deviceId + "/device")
+        var ref = Firebase(url: kDevicesURL + deviceId + "/name")
         
         ref.observeEventType(FEventType.Value, withBlock: { (snapshot) -> Void in
             let valueString = snapshot.value as? String
