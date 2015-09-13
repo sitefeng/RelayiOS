@@ -160,7 +160,6 @@ class LMLoginSelectViewController: UIViewController, UITableViewDelegate, UITabl
         } else {
             let deviceId = self.deviceIds[indexPath.row]
             LMAuthContext().removeDeviceId(deviceId)
-            
         }
         
         self.reloadData()

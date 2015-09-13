@@ -58,9 +58,10 @@ class LMFirebaseInterfacer: NSObject {
             
             let deviceName: AnyObject? = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: nil)
             
-            if deviceName != nil {
-                let deviceNameStr = deviceName as! String
-                callback(deviceNameStr)
+            let deviceNameStr = deviceName as? String
+            if deviceNameStr != nil {
+                
+                callback(deviceNameStr!)
             } else {
                 callback("")
             }

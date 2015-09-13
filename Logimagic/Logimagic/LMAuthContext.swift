@@ -47,6 +47,7 @@ class LMAuthContext: NSObject {
     
     func removeDeviceId(deviceId: String) {
         var idsArray = userDefaults.objectForKey(kDeviceIdsKey) as! [String]
+        
         let newArray = idsArray.filter({
             $0 != deviceId
         })
