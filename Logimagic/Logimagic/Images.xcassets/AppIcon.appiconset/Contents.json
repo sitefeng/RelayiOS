@@ -3,37 +3,37 @@
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "touchId-5.png",
+      "filename" : "appIcon-5.png",
       "scale" : "2x"
     },
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "touchId-3.png",
+      "filename" : "appIcon-3.png",
       "scale" : "3x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "touchId-4.png",
+      "filename" : "appIcon-4.png",
       "scale" : "2x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "touchId-2.png",
+      "filename" : "appIcon-2.png",
       "scale" : "3x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "touchId-1.png",
+      "filename" : "appIcon-1.png",
       "scale" : "2x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "touchId.png",
+      "filename" : "appIcon.png",
       "scale" : "3x"
     }
   ],

@@ -16,7 +16,7 @@ class LMCoreDataHelper: NSObject {
         let moc = appDelegate.managedObjectContext
         
         var fetchRequest = NSFetchRequest(entityName: "Account")
-        fetchRequest.predicate = NSPredicate(format: "email == %@", account.email)
+        fetchRequest.predicate = NSPredicate(format: "email == %@ && type == %@", account.email, account.type)
         let accountsMOAny = moc?.executeFetchRequest(fetchRequest, error: nil)
         
         if accountsMOAny != nil {

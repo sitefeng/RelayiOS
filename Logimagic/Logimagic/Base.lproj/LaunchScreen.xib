@@ -13,10 +13,10 @@
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logimagic" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="kId-c2-rCX">
                     <rect key="frame" x="20" y="219" width="441" height="43"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
-                    <color key="textColor" red="0.78384560032894723" green="0.3411764706" blue="0.67843137249999996" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" red="0.81770833333333337" green="0.1905605330738584" blue="0.11458745902081899" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="touchId" translatesAutoresizingMaskIntoConstraints="NO" id="KX9-33-lpx">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fingerprintIcon" translatesAutoresizingMaskIntoConstraints="NO" id="KX9-33-lpx">
                     <rect key="frame" x="200" y="131.5" width="80" height="80"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="80" id="3F1-dl-bCA"/>
@@ -38,6 +38,6 @@
         </view>
     </objects>
     <resources>
-        <image name="touchId" width="238" height="238"/>
+        <image name="fingerprintIcon" width="344" height="344"/>
     </resources>
 </document>
