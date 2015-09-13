@@ -20,6 +20,7 @@ class LMLoginSelectViewController: UIViewController, UITableViewDelegate, UITabl
     
     var accounts: [LMAccount] = []
     var deviceIds: [String] = []
+    var deviceNames: [String: String] = [String: String]() //deviceId: DeviceName
     
     var selectedServiceIndexPath: NSIndexPath?
     var selectedDeviceIndexPath: NSIndexPath?
@@ -62,11 +63,6 @@ class LMLoginSelectViewController: UIViewController, UITableViewDelegate, UITabl
         
         self.reloadData()
         
-        if deviceTableView.numberOfRowsInSection(0) > 0 {
-            deviceTableView.selectRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0), animated: false, scrollPosition: UITableViewScrollPosition.Top)
-            
-            self.selectedDeviceIndexPath = NSIndexPath(forRow: 0, inSection: 0)
-        }
     }
 
     
@@ -89,10 +85,13 @@ class LMLoginSelectViewController: UIViewController, UITableViewDelegate, UITabl
     // MARK: Table View
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        println("acc: \(accounts)")
+        println("dev: \(deviceIds)")
+        
         if serviceTableView == tableView {
             return self.accounts.count
         } else {
-            return self.deviceIds.count
+            return self.deviceNames.count
         }
     }
     
@@ -116,7 +115,8 @@ class LMLoginSelectViewController: UIViewController, UITableViewDelegate, UITabl
             
             var cell: UITableViewCell = self.deviceTableView.dequeueReusableCellWithIdentifier(kDeviceCellId, forIndexPath: indexPath) as! UITableViewCell
             
-            cell.textLabel?.text = self.deviceIds[indexPath.row]
+            let deviceId = self.deviceIds[indexPath.row]
+            cell.textLabel?.text = self.deviceNames[deviceId]
             cell.selectedBackgroundView = backView
             return cell
         }
@@ -180,12 +180,30 @@ class LMLoginSelectViewController: UIViewController, UITableViewDelegate, UITabl
     
     func reloadData() {
         
+        // Accounts
         self.accounts = LMCoreDataHelper.getAllAccounts()
-        self.deviceIds = LMAuthContext().deviceIds
         self.serviceTableView.reloadData()
-        self.deviceTableView.reloadData()
+        
+        // Devices
+        self.deviceIds = LMAuthContext().deviceIds
+        self.deviceNames = [String: String]()
+        
+        for devId in self.deviceIds {
+            LMFirebaseInterfacer.getDeviceNameStatic(devId, callback: { (deviceName) -> Void in
+                
+                self.deviceNames[devId] = deviceName
+                self.deviceTableView.reloadData()
+                
+                // Select the first device by default
+                if self.deviceTableView.numberOfRowsInSection(0) > 0 {
+                    self.deviceTableView.selectRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0), animated: false, scrollPosition: UITableViewScrollPosition.Top)
+                    self.selectedDeviceIndexPath = NSIndexPath(forRow: 0, inSection: 0)
+                }
+            })
+        }
+
+        
     }
-    
     
     
     func authenticateWithTouchId() {

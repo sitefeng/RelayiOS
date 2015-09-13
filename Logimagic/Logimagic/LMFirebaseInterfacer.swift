@@ -25,6 +25,50 @@ class LMFirebaseInterfacer: NSObject {
         
     }
     
+    class func getDeviceName(deviceId: String, callback: ((String) -> Void)) {
+        
+        var ref = Firebase(url: kDevicesURL + deviceId + "/device")
+        
+        ref.observeEventType(FEventType.Value, withBlock: { (snapshot) -> Void in
+            let valueString = snapshot.value as? String
+            
+            if valueString != nil {
+                callback(valueString!)
+            } else {
+                callback("No Name Given")
+            }
+            
+        })
+        
+    }
+    
+    
+    class func getDeviceNameStatic(deviceId: String, callback: ((String) -> Void)) {
+        
+        let url = NSURL(string: kDevicesURL + deviceId + "/device.json")!
+        var request = NSMutableURLRequest(URL: url)
+        
+        request.HTTPMethod = "GET"
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { (resp, data, error) -> Void in
+            if error != nil {
+                println("No Internet")
+                callback("")
+                return
+            }
+            
+            let deviceName: AnyObject? = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: nil)
+            
+            if deviceName != nil {
+                let deviceNameStr = deviceName as! String
+                callback(deviceNameStr)
+            } else {
+                callback("")
+            }
+        }
+        
+    }
+    
+    
     class func sendAutoLoginInfo(deviceId: String) {
         
         
