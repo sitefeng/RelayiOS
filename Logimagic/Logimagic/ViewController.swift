@@ -63,13 +63,15 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     func captureOutput(captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [AnyObject]!, fromConnection connection: AVCaptureConnection!) {
         if (metadataObjects != nil && metadataObjects.count > 0) {
             let metadata = metadataObjects[0] as! AVMetadataMachineReadableCodeObject
-            let string = metadata.stringValue
+            let deviceIdString = metadata.stringValue
             self.stopQRSession()
             
-            var alertVC = UIAlertController(title: "Welcome", message: "Your Firebase ID is: \(string)", preferredStyle: UIAlertControllerStyle.Alert)
-            alertVC.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
-            self.presentViewController(alertVC, animated: true, completion: nil)
+            let authContext = LMAuthContext()
+            authContext.deviceId = deviceIdString
             
+            let loginSelectVC = LMLoginSelectViewController(nibName: "LMLoginSelectViewController", bundle: nil)
+            let loginNavVC = UINavigationController(rootViewController: loginSelectVC)
+            self.presentViewController(loginNavVC, animated: true, completion: nil)
         }
     }
 

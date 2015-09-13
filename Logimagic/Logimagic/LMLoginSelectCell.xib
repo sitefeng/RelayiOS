@@ -1,18 +1,62 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="LMLoginSelectCell" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="64" id="KGk-i7-Jjw" customClass="LMLoginSelectCell" customModule="Logimagic" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="344" height="64"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QGa-UP-ZAW">
+                        <rect key="frame" x="8" y="6" width="50" height="50.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="DP7-ns-nel"/>
+                            <constraint firstAttribute="width" constant="50" id="Slc-30-a5d"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fVa-y4-1H4">
+                        <rect key="frame" x="66" y="8" width="270" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="zes-bA-4cT"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2SI-ae-ZfS">
+                        <rect key="frame" x="66" y="32" width="270" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="kCL-ez-xY8"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="fVa-y4-1H4" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="7eV-ez-NEd"/>
+                    <constraint firstItem="fVa-y4-1H4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="DUd-Pz-25p"/>
+                    <constraint firstAttribute="centerY" secondItem="QGa-UP-ZAW" secondAttribute="centerY" id="O6x-V8-XG8"/>
+                    <constraint firstItem="2SI-ae-ZfS" firstAttribute="leading" secondItem="QGa-UP-ZAW" secondAttribute="trailing" constant="8" id="TYH-OQ-zgG"/>
+                    <constraint firstItem="fVa-y4-1H4" firstAttribute="leading" secondItem="QGa-UP-ZAW" secondAttribute="trailing" constant="8" id="VGP-MX-wbw"/>
+                    <constraint firstItem="2SI-ae-ZfS" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="as5-Nl-5en"/>
+                    <constraint firstItem="2SI-ae-ZfS" firstAttribute="top" secondItem="fVa-y4-1H4" secondAttribute="bottom" constant="3" id="dao-rt-5dg"/>
+                    <constraint firstItem="QGa-UP-ZAW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="dec-sb-0H1"/>
+                </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="emailLabel" destination="2SI-ae-ZfS" id="WHQ-EL-p32"/>
+                <outlet property="nameLabel" destination="fVa-y4-1H4" id="3w2-gH-1JR"/>
+                <outlet property="typeImageView" destination="QGa-UP-ZAW" id="VB8-ap-if1"/>
+            </connections>
+            <point key="canvasLocation" x="467" y="279"/>
         </tableViewCell>
     </objects>
 </document>

@@ -18,9 +18,16 @@ class LMAddAccountViewController: UIViewController, UITableViewDelegate, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = "Add Account"
+        
+        // Cancel Button
+        var cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Done, target: self, action: "cancelButtonPressed")
+        self.navigationItem.rightBarButtonItem = cancelButton
 
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.rowHeight = LMAddAccountCell.kCellHeight
         tableView.registerNib(UINib(nibName: "LMAddAccountCell", bundle: nil), forCellReuseIdentifier: kAddAccountCellId)
         
     }
@@ -51,6 +58,11 @@ class LMAddAccountViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     
+    
+    // Other methods
+    func cancelButtonPressed() {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
     
 }
 

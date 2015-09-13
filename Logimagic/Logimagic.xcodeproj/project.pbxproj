@@ -31,6 +31,9 @@
 		AAE874A91BA4D64800C6D4E4 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAE874A71BA4D63900C6D4E4 /* LocalAuthentication.framework */; };
 		AAE874AB1BA4D87F00C6D4E4 /* LMFirebaseInterfacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE874AA1BA4D87F00C6D4E4 /* LMFirebaseInterfacer.swift */; };
 		AAE874AD1BA4D8BD00C6D4E4 /* LMAuthContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE874AC1BA4D8BD00C6D4E4 /* LMAuthContext.swift */; };
+		AAE874B61BA51AC400C6D4E4 /* LMCoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE874B51BA51AC400C6D4E4 /* LMCoreDataHelper.swift */; };
+		AAE874B81BA51ADB00C6D4E4 /* LMAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE874B71BA51ADB00C6D4E4 /* LMAccount.swift */; };
+		AAE874BA1BA51EA900C6D4E4 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE874B91BA51EA900C6D4E4 /* Account.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +76,9 @@
 		AAE874A71BA4D63900C6D4E4 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		AAE874AA1BA4D87F00C6D4E4 /* LMFirebaseInterfacer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMFirebaseInterfacer.swift; sourceTree = "<group>"; };
 		AAE874AC1BA4D8BD00C6D4E4 /* LMAuthContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMAuthContext.swift; sourceTree = "<group>"; };
+		AAE874B51BA51AC400C6D4E4 /* LMCoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMCoreDataHelper.swift; sourceTree = "<group>"; };
+		AAE874B71BA51ADB00C6D4E4 /* LMAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMAccount.swift; sourceTree = "<group>"; };
+		AAE874B91BA51EA900C6D4E4 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Account.swift; path = ../Account.swift; sourceTree = "<group>"; };
 		C028785EB8CA712AEDB10380 /* libPods-Logimagic.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Logimagic.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -138,8 +144,8 @@
 			isa = PBXGroup;
 			children = (
 				AAE874651BA48DB600C6D4E4 /* AppDelegate.swift */,
-				AAE874AC1BA4D8BD00C6D4E4 /* LMAuthContext.swift */,
-				AAE874AA1BA4D87F00C6D4E4 /* LMFirebaseInterfacer.swift */,
+				AAE874B21BA50A6200C6D4E4 /* ManagedObjects */,
+				AAE874B31BA50A7900C6D4E4 /* Utilities */,
 				AAE8746A1BA48DB600C6D4E4 /* ViewController.swift */,
 				AAE8746C1BA48DB600C6D4E4 /* Main.storyboard */,
 				AAE8748B1BA4B39200C6D4E4 /* LMLoginSelectViewController.swift */,
@@ -187,6 +193,25 @@
 				AAE8747D1BA48DB600C6D4E4 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AAE874B21BA50A6200C6D4E4 /* ManagedObjects */ = {
+			isa = PBXGroup;
+			children = (
+				AAE874B91BA51EA900C6D4E4 /* Account.swift */,
+				AAE874B71BA51ADB00C6D4E4 /* LMAccount.swift */,
+			);
+			name = ManagedObjects;
+			sourceTree = "<group>";
+		};
+		AAE874B31BA50A7900C6D4E4 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				AAE874AC1BA4D8BD00C6D4E4 /* LMAuthContext.swift */,
+				AAE874AA1BA4D87F00C6D4E4 /* LMFirebaseInterfacer.swift */,
+				AAE874B51BA51AC400C6D4E4 /* LMCoreDataHelper.swift */,
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,9 +355,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAE874B81BA51ADB00C6D4E4 /* LMAccount.swift in Sources */,
 				AAE874A11BA4C5FB00C6D4E4 /* LMAddAccountCell.swift in Sources */,
 				AAE8749D1BA4C5E900C6D4E4 /* LMAccountDetailsViewController.swift in Sources */,
 				AAE874991BA4C0DA00C6D4E4 /* LMAddAccountViewController.swift in Sources */,
+				AAE874B61BA51AC400C6D4E4 /* LMCoreDataHelper.swift in Sources */,
 				AAE8746B1BA48DB600C6D4E4 /* ViewController.swift in Sources */,
 				AAE874691BA48DB600C6D4E4 /* Logimagic.xcdatamodeld in Sources */,
 				AAE874661BA48DB600C6D4E4 /* AppDelegate.swift in Sources */,
@@ -341,6 +368,7 @@
 				AAE874AB1BA4D87F00C6D4E4 /* LMFirebaseInterfacer.swift in Sources */,
 				AAE874A51BA4CBA000C6D4E4 /* LMAccountDetailsCell.swift in Sources */,
 				AAE874AD1BA4D8BD00C6D4E4 /* LMAuthContext.swift in Sources */,
+				AAE874BA1BA51EA900C6D4E4 /* Account.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

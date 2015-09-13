@@ -9,7 +9,7 @@
 import UIKit
 
 protocol LMAccountDetailsCellDelegate {
-    func accountDetailsCell(cell: LMAccountDetailsCell, didFinishedEditingWithTitle title: String, value: String)
+    func accountDetailsCell(cell: LMAccountDetailsCell, didFinishedEditingWithTitle titleString: String, value: String)
 }
 
 
@@ -22,8 +22,8 @@ class LMAccountDetailsCell: UITableViewCell, UITextFieldDelegate {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        self.textField.delegate = self
+        textField.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
+
     }
 
     
@@ -35,7 +35,7 @@ class LMAccountDetailsCell: UITableViewCell, UITextFieldDelegate {
     }
     
     
-    func textFieldDidEndEditing(textField: UITextField) {
+    func textFieldDidChange(textField: UITextField) {
         
         var titleText = ""
         if self.titleLabel.text != nil {

@@ -10,15 +10,28 @@ import UIKit
 
 class LMLoginSelectCell: UITableViewCell {
 
+    static let kCellHeight: CGFloat = 64
+    
+    @IBOutlet weak var emailLabel: UILabel!
+
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var typeImageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        self.typeImageView.layer.cornerRadius = self.typeImageView.frame.size.width/2
+        self.typeImageView.layer.masksToBounds = true
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func setupCell(name: String, type: String, email: String) {
+        
+        self.nameLabel.text = name
+        self.emailLabel.text = email
+        
+        let image = UIImage(named: type + "Icon")
+        self.typeImageView.image = image
     }
     
 }

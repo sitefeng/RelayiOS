@@ -10,4 +10,24 @@ import UIKit
 
 class LMAuthContext: NSObject {
    
+    let userDefaults = NSUserDefaults.standardUserDefaults()
+    
+    let kDeviceIdKey = "kDeviceIdKey"
+
+    var deviceId: String! {
+        set {
+            userDefaults.setObject(newValue, forKey: kDeviceIdKey)
+            
+        } get {
+            return userDefaults.objectForKey(kDeviceIdKey) as! String
+        }
+    }
+    
+    
+    override init() {
+        super.init()
+    }
+    
+    
+    
 }
