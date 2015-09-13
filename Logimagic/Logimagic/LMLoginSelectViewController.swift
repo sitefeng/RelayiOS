@@ -62,8 +62,11 @@ class LMLoginSelectViewController: UIViewController, UITableViewDelegate, UITabl
         
         self.reloadData()
         
-        deviceTableView.selectRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0), animated: false, scrollPosition: UITableViewScrollPosition.Top)
-        self.selectedDeviceIndexPath = NSIndexPath(forRow: 0, inSection: 0)
+        if deviceTableView.numberOfRowsInSection(0) > 0 {
+            deviceTableView.selectRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0), animated: false, scrollPosition: UITableViewScrollPosition.Top)
+            
+            self.selectedDeviceIndexPath = NSIndexPath(forRow: 0, inSection: 0)
+        }
     }
 
     
