@@ -19,6 +19,8 @@ class LMLoginSelectViewController: UIViewController, UITableViewDelegate, UITabl
     var accounts: [LMAccount] = []
     var deviceIds: [String] = []
     
+    var selectedIndexPath: NSIndexPath?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -80,6 +82,7 @@ class LMLoginSelectViewController: UIViewController, UITableViewDelegate, UITabl
     
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        selectedIndexPath = indexPath
         self.authenticateWithTouchId()
         self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
@@ -136,16 +139,18 @@ class LMLoginSelectViewController: UIViewController, UITableViewDelegate, UITabl
     
     
     func requestLogin() {
-        let selectedIndexPath = self.tableView.indexPathForSelectedRow()
         
         if selectedIndexPath != nil {
             let account = self.accounts[selectedIndexPath!.row]
             let deviceId = self.deviceIds[selectedIndexPath!.section]
             LMFirebaseInterfacer.sendLoginInfo(deviceId, serviceType: account.type, username: account.email, password: account.password)
             
+            self.selectedIndexPath = nil;
+            
         } else {
             println("No Row Selected")
         }
+        
     }
     
     

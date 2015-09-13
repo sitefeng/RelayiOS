@@ -22,6 +22,7 @@ class LMFirebaseInterfacer: NSObject {
                     "password": password]
         
         ref.updateChildValues(dict)
+        
     }
     
     class func sendAutoLoginInfo(deviceId: String) {

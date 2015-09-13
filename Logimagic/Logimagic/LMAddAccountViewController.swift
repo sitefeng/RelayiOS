@@ -14,7 +14,7 @@ class LMAddAccountViewController: UIViewController, UITableViewDelegate, UITable
     
     let kAddAccountCellId = "kAddAccountCellId"
     
-    let accountTypes = ["facebook", "linkedin", "gmail", "outlook"]
+    let accountTypes = ["facebook", "linkedin", "gmail", "twitter"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
