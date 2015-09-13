@@ -49,7 +49,7 @@ class LMAddAccountViewController: UIViewController, UITableViewDelegate, UITable
     
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
+        self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
         let accountDetailsVC = LMAccountDetailsViewController(nibName:"LMAccountDetailsViewController", bundle: nil)
         accountDetailsVC.selectedAccountType = self.accountTypes[indexPath.row]
         
