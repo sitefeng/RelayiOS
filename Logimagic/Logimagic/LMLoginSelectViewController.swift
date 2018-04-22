@@ -31,14 +31,14 @@ class LMLoginSelectViewController: UIViewController, UITableViewDelegate, UITabl
         self.title = "Service Login"
         
         // Navigation Bar
-        var addButton = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+        let addButton = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
         addButton.addTarget(self, action: "addButtonPressed", forControlEvents: UIControlEvents.TouchUpInside)
         addButton.setImage(UIImage(named: "addIcon"), forState: UIControlState.Normal)
         let addNavItem = UIBarButtonItem(customView: addButton)
         self.navigationItem.rightBarButtonItem = addNavItem
         
         
-        var addDevice = UIBarButtonItem(title: "New Device", style: UIBarButtonItemStyle.Plain, target: self, action: "addDevicePressed")
+        let addDevice = UIBarButtonItem(title: "New Device", style: UIBarButtonItemStyle.Plain, target: self, action: "addDevicePressed")
         self.navigationItem.leftBarButtonItem = addDevice
         
         
@@ -74,7 +74,7 @@ class LMLoginSelectViewController: UIViewController, UITableViewDelegate, UITabl
     
     
     func addDevicePressed() {
-        var qrVC = LMQRScanViewController(nibName: "LMQRScanViewController", bundle: nil)
+        let qrVC = LMQRScanViewController(nibName: "LMQRScanViewController", bundle: nil)
         qrVC.isPopupPresented = true
         
         let navController = UINavigationController(rootViewController: qrVC)
@@ -85,8 +85,8 @@ class LMLoginSelectViewController: UIViewController, UITableViewDelegate, UITabl
     // MARK: Table View
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        println("acc: \(accounts)")
-        println("dev: \(deviceIds)")
+        print("acc: \(accounts)")
+        print("dev: \(deviceIds)")
         
         if serviceTableView == tableView {
             return self.accounts.count
@@ -102,7 +102,7 @@ class LMLoginSelectViewController: UIViewController, UITableViewDelegate, UITabl
         backView.backgroundColor = UIColor.blueColor().colorWithAlphaComponent(0.3)
         
         if serviceTableView == tableView {
-            var loginSelectCell = self.serviceTableView.dequeueReusableCellWithIdentifier(kLoginSelectCellId) as! LMLoginSelectCell
+            let loginSelectCell = self.serviceTableView.dequeueReusableCellWithIdentifier(kLoginSelectCellId) as! LMLoginSelectCell
             let account = self.accounts[indexPath.row]
             
             loginSelectCell.setupCell(account.name, type: account.type, email: account.email)
@@ -113,7 +113,7 @@ class LMLoginSelectViewController: UIViewController, UITableViewDelegate, UITabl
         
         } else {
             
-            var cell: UITableViewCell = self.deviceTableView.dequeueReusableCellWithIdentifier(kDeviceCellId, forIndexPath: indexPath) as! UITableViewCell
+            let cell: UITableViewCell = self.deviceTableView.dequeueReusableCellWithIdentifier(kDeviceCellId, forIndexPath: indexPath) 
             
             let deviceId = self.deviceIds[indexPath.row]
             cell.textLabel?.text = self.deviceNames[deviceId]
@@ -129,10 +129,12 @@ class LMLoginSelectViewController: UIViewController, UITableViewDelegate, UITabl
             if self.selectedDeviceIndexPath != nil {
             
                 selectedServiceIndexPath = indexPath
-                self.authenticateWithTouchId()
+//                self.authenticateWithTouchId()
+                self.requestLogin()
+                
                 self.serviceTableView.deselectRowAtIndexPath(indexPath, animated: true)
             } else {
-                var alertVC = UIAlertController(title: "Cannot Login", message: "Please add new chrome extension connection via QR Scanner", preferredStyle: UIAlertControllerStyle.Alert)
+                let alertVC = UIAlertController(title: "Cannot Login", message: "Please add new chrome extension connection via QR Scanner", preferredStyle: UIAlertControllerStyle.Alert)
                 alertVC.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
                 self.presentViewController(alertVC, animated: true, completion: nil)
             }
@@ -210,22 +212,25 @@ class LMLoginSelectViewController: UIViewController, UITableViewDelegate, UITabl
         let context = LAContext()
         var evError: NSError?
         
-        if context.canEvaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, error: &evError) {
+        do {
+            context.canEvaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, error: &evError)
             if evError != nil {
-                println("auth Error: \(evError)")
+                print("auth Error: \(evError)")
                 return
             }
             
             context.evaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, localizedReason: "Allow password to be sent to Chrome extension", reply: { (success, error) -> Void in
                 if success {
-                    println("success")
+                    print("success")
                     self.requestLogin()
                     
                     
                 } else {
-                    println("error:\(error.localizedDescription)")
+                    print("error:\(error!.localizedDescription)")
                 }
             })
+        } catch let error as NSError {
+            evError = error
         }
     }
     
@@ -240,7 +245,7 @@ class LMLoginSelectViewController: UIViewController, UITableViewDelegate, UITabl
             self.selectedServiceIndexPath = nil;
             
         } else {
-            var alertVC = UIAlertController(title: "Cannot Login", message: "Please Select your Device and Social Account", preferredStyle: UIAlertControllerStyle.Alert)
+            let alertVC = UIAlertController(title: "Cannot Login", message: "Please Select your Device and Social Account", preferredStyle: UIAlertControllerStyle.Alert)
             alertVC.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
             self.presentViewController(alertVC, animated: true, completion: nil)
         }

@@ -15,9 +15,9 @@ class LMFirebaseInterfacer: NSObject {
    
     class func sendLoginInfo(deviceId: String, serviceType: String, username: String, password: String) {
         
-        var ref = Firebase(url: kDevicesURL + deviceId)
+        let ref = Firebase(url: kDevicesURL + deviceId)
         
-        var dict = ["username": username,
+        let dict = ["username": username,
                     "serviceType": serviceType,
                     "password": password]
         
@@ -27,7 +27,7 @@ class LMFirebaseInterfacer: NSObject {
     
     class func getDeviceName(deviceId: String, callback: ((String) -> Void)) {
         
-        var ref = Firebase(url: kDevicesURL + deviceId + "/name")
+        let ref = Firebase(url: kDevicesURL + deviceId + "/name")
         
         ref.observeEventType(FEventType.Value, withBlock: { (snapshot) -> Void in
             let valueString = snapshot.value as? String
@@ -45,18 +45,18 @@ class LMFirebaseInterfacer: NSObject {
     
     class func getDeviceNameStatic(deviceId: String, callback: ((String) -> Void)) {
         
-        let url = NSURL(string: kDevicesURL + deviceId + "/device.json")!
-        var request = NSMutableURLRequest(URL: url)
+        let url = NSURL(string: kDevicesURL + deviceId + "/name.json")!
+        let request = NSMutableURLRequest(URL: url)
         
         request.HTTPMethod = "GET"
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { (resp, data, error) -> Void in
             if error != nil {
-                println("No Internet")
+                print("No Internet")
                 callback("")
                 return
             }
             
-            let deviceName: AnyObject? = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: nil)
+            let deviceName: AnyObject? = try? NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments)
             
             let deviceNameStr = deviceName as? String
             if deviceNameStr != nil {

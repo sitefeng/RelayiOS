@@ -22,7 +22,7 @@ class LMAddAccountViewController: UIViewController, UITableViewDelegate, UITable
         self.title = "Add Account"
         
         // Cancel Button
-        var cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Done, target: self, action: "cancelButtonPressed")
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Done, target: self, action: "cancelButtonPressed")
         self.navigationItem.leftBarButtonItem = cancelButton
 
         tableView.delegate = self
@@ -41,7 +41,7 @@ class LMAddAccountViewController: UIViewController, UITableViewDelegate, UITable
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = self.tableView.dequeueReusableCellWithIdentifier(kAddAccountCellId) as! LMAddAccountCell
+        let cell = self.tableView.dequeueReusableCellWithIdentifier(kAddAccountCellId) as! LMAddAccountCell
         
         cell.setupWithAccountType(accountTypes[indexPath.row])
         return cell

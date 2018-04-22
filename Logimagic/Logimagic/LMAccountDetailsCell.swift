@@ -42,7 +42,7 @@ class LMAccountDetailsCell: UITableViewCell, UITextFieldDelegate {
             titleText = titleLabel.text!
         }
         
-        self.delegate?.accountDetailsCell(self, didFinishedEditingWithTitle: titleText, value: self.textField.text)
+        self.delegate?.accountDetailsCell(self, didFinishedEditingWithTitle: titleText, value: self.textField.text!)
     }
     
 }

@@ -38,7 +38,7 @@ class LMAuthContext: NSObject {
     func addDeviceId(deviceId: String) {
         var idsArray = userDefaults.objectForKey(kDeviceIdsKey) as! [String]
         
-        if !contains(idsArray, deviceId) {
+        if !idsArray.contains(deviceId) {
             idsArray.append(deviceId)
             userDefaults.setObject(idsArray, forKey: kDeviceIdsKey)
         }
@@ -46,7 +46,7 @@ class LMAuthContext: NSObject {
     
     
     func removeDeviceId(deviceId: String) {
-        var idsArray = userDefaults.objectForKey(kDeviceIdsKey) as! [String]
+        let idsArray = userDefaults.objectForKey(kDeviceIdsKey) as! [String]
         
         let newArray = idsArray.filter({
             $0 != deviceId

@@ -16,6 +16,7 @@ class LMAccountDetailsViewController: UIViewController, UITableViewDelegate, UIT
     @IBOutlet weak var tableView: UITableView!
     let kAccountDetailsCellId = "kAccountDetailsCellId"
     
+    let textFieldNames: [String] = ["Name", "Email", "Password"]
     var textFieldDict: [String: String] = ["Name": "", "Email": "", "Password": ""]
     let placeholderTexts = ["John Appleseed", "example@website.com", "Required"]
     let isSecures = [false, false, true]
@@ -27,7 +28,7 @@ class LMAccountDetailsViewController: UIViewController, UITableViewDelegate, UIT
         self.title = self.selectedAccountType.capitalizedString
 
         // Save Button
-        var saveButton = UIBarButtonItem(title: "Save", style: UIBarButtonItemStyle.Done, target: self, action: "saveButtonPressed")
+        let saveButton = UIBarButtonItem(title: "Save", style: UIBarButtonItemStyle.Done, target: self, action: "saveButtonPressed")
         self.navigationItem.rightBarButtonItem = saveButton
         
         
@@ -41,12 +42,12 @@ class LMAccountDetailsViewController: UIViewController, UITableViewDelegate, UIT
 
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return textFieldDict.keys.array.count
+        return textFieldNames.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = self.tableView.dequeueReusableCellWithIdentifier(kAccountDetailsCellId) as! LMAccountDetailsCell
-        let titleTexts = textFieldDict.keys.array
+        let cell = self.tableView.dequeueReusableCellWithIdentifier(kAccountDetailsCellId) as! LMAccountDetailsCell
+        let titleTexts = textFieldNames
         
         cell.setupWithTitle(titleTexts[indexPath.row], placeholderText: placeholderTexts[indexPath.row], isSecure: isSecures[indexPath.row])
         cell.delegate = self
@@ -73,10 +74,14 @@ class LMAccountDetailsViewController: UIViewController, UITableViewDelegate, UIT
     
     func saveButtonPressed() {
         
-        let textFieldValues: [String] = textFieldDict.values.array
+        var textFieldValues: [String] = []
+        for titleName in self.textFieldNames {
+            let value = textFieldDict[titleName] as String!
+            textFieldValues.append(value)
+        }
         
-        if contains(textFieldValues, "") {
-            var alertVC = UIAlertController(title: "Cannot Save", message: "Missing Some Fields", preferredStyle: UIAlertControllerStyle.Alert)
+        if textFieldValues.contains("") {
+            let alertVC = UIAlertController(title: "Cannot Save", message: "Missing Some Fields", preferredStyle: UIAlertControllerStyle.Alert)
             alertVC.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
             self.presentViewController(alertVC, animated: true, completion: nil)
             return

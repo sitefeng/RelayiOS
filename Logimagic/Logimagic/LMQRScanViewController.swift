@@ -29,14 +29,14 @@ class LMQRScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDe
         self.title = "Scan QR"
         
         if (isPopupPresented) {
-            var cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Done, target: self, action: "cancelButtonPressed")
+            let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Done, target: self, action: "cancelButtonPressed")
             self.navigationItem.leftBarButtonItem = cancelButton
         }
         
         self.device = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
         self.session = AVCaptureSession()
         
-        self.input = AVCaptureDeviceInput(device: device, error: nil)
+        self.input = try? AVCaptureDeviceInput(device: device)
         self.session.addInput(self.input)
         
         self.output = AVCaptureMetadataOutput()
@@ -50,7 +50,7 @@ class LMQRScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDe
         if availableTypes.containsObject(AVMetadataObjectTypeQRCode) {
             self.output.metadataObjectTypes = [AVMetadataObjectTypeQRCode]
         } else {
-            var alertVC = UIAlertController(title: "Cannot Read QR Code", message: "Error Occurred", preferredStyle: UIAlertControllerStyle.Alert)
+            let alertVC = UIAlertController(title: "Cannot Read QR Code", message: "Error Occurred", preferredStyle: UIAlertControllerStyle.Alert)
             alertVC.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
             self.presentViewController(alertVC, animated: true, completion: nil)
         }
