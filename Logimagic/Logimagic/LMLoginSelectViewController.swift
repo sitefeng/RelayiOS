@@ -32,13 +32,13 @@ class LMLoginSelectViewController: UIViewController, UITableViewDelegate, UITabl
         
         // Navigation Bar
         let addButton = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
-        addButton.addTarget(self, action: "addButtonPressed", forControlEvents: UIControlEvents.TouchUpInside)
-        addButton.setImage(UIImage(named: "addIcon"), forState: UIControlState.Normal)
+        addButton.addTarget(self, action: #selector(LMLoginSelectViewController.addButtonPressed), for: .touchUpInside)
+        addButton.setImage(UIImage(named: "addIcon"), for: UIControlState.normal)
         let addNavItem = UIBarButtonItem(customView: addButton)
         self.navigationItem.rightBarButtonItem = addNavItem
         
         
-        let addDevice = UIBarButtonItem(title: "New Device", style: UIBarButtonItemStyle.Plain, target: self, action: "addDevicePressed")
+        let addDevice = UIBarButtonItem(title: "New Device", style: UIBarButtonItemStyle.plain, target: self, action: #selector(LMLoginSelectViewController.addDevicePressed))
         self.navigationItem.leftBarButtonItem = addDevice
         
         
@@ -46,19 +46,19 @@ class LMLoginSelectViewController: UIViewController, UITableViewDelegate, UITabl
         serviceTableView.delegate = self
         serviceTableView.dataSource = self
         serviceTableView.rowHeight = LMLoginSelectCell.kCellHeight
-        serviceTableView.registerNib(UINib(nibName: "LMLoginSelectCell", bundle: nil), forCellReuseIdentifier: kLoginSelectCellId)
+        serviceTableView.register(UINib(nibName: "LMLoginSelectCell", bundle: nil), forCellReuseIdentifier: kLoginSelectCellId)
         
         
         // Devices
         deviceTableView.delegate = self
         deviceTableView.dataSource = self
         deviceTableView.rowHeight = LMLoginSelectCell.kCellHeight
-        deviceTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: kDeviceCellId)
+        deviceTableView.register(UITableViewCell.self, forCellReuseIdentifier: kDeviceCellId)
         
     }
     
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         self.reloadData()
@@ -69,7 +69,7 @@ class LMLoginSelectViewController: UIViewController, UITableViewDelegate, UITabl
     func addButtonPressed() {
         let addAccountVC = LMAddAccountViewController(nibName:"LMAddAccountViewController", bundle: nil)
         let addAccountNavController = UINavigationController(rootViewController: addAccountVC)
-        self.presentViewController(addAccountNavController, animated: true, completion: nil)
+        self.present(addAccountNavController, animated: true, completion: nil)
     }
     
     
@@ -78,13 +78,13 @@ class LMLoginSelectViewController: UIViewController, UITableViewDelegate, UITabl
         qrVC.isPopupPresented = true
         
         let navController = UINavigationController(rootViewController: qrVC)
-        self.presentViewController(navController, animated: true, completion: nil)
+        self.present(navController, animated: true, completion: nil)
         
     }
     
     // MARK: Table View
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print("acc: \(accounts)")
         print("dev: \(deviceIds)")
         
@@ -96,16 +96,16 @@ class LMLoginSelectViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let backView = UIView(frame: CGRectZero)
-        backView.backgroundColor = UIColor.blueColor().colorWithAlphaComponent(0.3)
+        let backView = UIView(frame: .zero)
+        backView.backgroundColor = UIColor.blue.withAlphaComponent(0.3)
         
         if serviceTableView == tableView {
-            let loginSelectCell = self.serviceTableView.dequeueReusableCellWithIdentifier(kLoginSelectCellId) as! LMLoginSelectCell
+            let loginSelectCell = self.serviceTableView.dequeueReusableCell(withIdentifier: kLoginSelectCellId) as! LMLoginSelectCell
             let account = self.accounts[indexPath.row]
             
-            loginSelectCell.setupCell(account.name, type: account.type, email: account.email)
+            loginSelectCell.setupCell(name: account.name, type: account.type, email: account.email)
             
             loginSelectCell.selectedBackgroundView = backView
             
@@ -113,7 +113,7 @@ class LMLoginSelectViewController: UIViewController, UITableViewDelegate, UITabl
         
         } else {
             
-            let cell: UITableViewCell = self.deviceTableView.dequeueReusableCellWithIdentifier(kDeviceCellId, forIndexPath: indexPath) 
+            let cell: UITableViewCell = self.deviceTableView.dequeueReusableCell(withIdentifier: kDeviceCellId, for: indexPath as IndexPath)
             
             let deviceId = self.deviceIds[indexPath.row]
             cell.textLabel?.text = self.deviceNames[deviceId]
@@ -132,11 +132,11 @@ class LMLoginSelectViewController: UIViewController, UITableViewDelegate, UITabl
 //                self.authenticateWithTouchId()
                 self.requestLogin()
                 
-                self.serviceTableView.deselectRowAtIndexPath(indexPath, animated: true)
+                self.serviceTableView.deselectRow(at: indexPath as IndexPath, animated: true)
             } else {
-                let alertVC = UIAlertController(title: "Cannot Login", message: "Please add new chrome extension connection via QR Scanner", preferredStyle: UIAlertControllerStyle.Alert)
-                alertVC.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
-                self.presentViewController(alertVC, animated: true, completion: nil)
+                let alertVC = UIAlertController(title: "Cannot Login", message: "Please add new chrome extension connection via QR Scanner", preferredStyle: UIAlertControllerStyle.alert)
+                alertVC.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alertVC, animated: true, completion: nil)
             }
         } else {
             self.selectedDeviceIndexPath = indexPath
@@ -150,18 +150,18 @@ class LMLoginSelectViewController: UIViewController, UITableViewDelegate, UITabl
     }
 
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if (editingStyle != UITableViewCellEditingStyle.Delete) {
+        if (editingStyle != UITableViewCellEditingStyle.delete) {
             return
         }
         
         if serviceTableView == tableView {
             let account = self.accounts[indexPath.row]
-            LMCoreDataHelper.removeAccountFromCoreData(account)
+            LMCoreDataHelper.removeAccountFromCoreData(account: account)
             
             
         } else {
             let deviceId = self.deviceIds[indexPath.row]
-            LMAuthContext().removeDeviceId(deviceId)
+            LMAuthContext().removeDeviceId(deviceId: deviceId)
         }
         
         self.reloadData()
@@ -190,15 +190,15 @@ class LMLoginSelectViewController: UIViewController, UITableViewDelegate, UITabl
         self.deviceNames = [String: String]()
         
         for devId in self.deviceIds {
-            LMFirebaseInterfacer.getDeviceNameStatic(devId, callback: { (deviceName) -> Void in
+            LMFirebaseInterfacer.getDeviceNameStatic(deviceId: devId, callback: { (deviceName) -> Void in
                 
                 self.deviceNames[devId] = deviceName
                 self.deviceTableView.reloadData()
                 
                 // Select the first device by default
-                if self.deviceTableView.numberOfRowsInSection(0) > 0 {
-                    self.deviceTableView.selectRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0), animated: false, scrollPosition: UITableViewScrollPosition.Top)
-                    self.selectedDeviceIndexPath = NSIndexPath(forRow: 0, inSection: 0)
+                if self.deviceTableView.numberOfRows(inSection: 0) > 0 {
+                    self.deviceTableView.selectRow(at: NSIndexPath(row: 0, section: 0) as IndexPath, animated: false, scrollPosition: UITableViewScrollPosition.top)
+                    self.selectedDeviceIndexPath = NSIndexPath(row: 0, section: 0)
                 }
             })
         }
@@ -213,13 +213,13 @@ class LMLoginSelectViewController: UIViewController, UITableViewDelegate, UITabl
         var evError: NSError?
         
         do {
-            context.canEvaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, error: &evError)
+            context.canEvaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, error: &evError)
             if evError != nil {
                 print("auth Error: \(evError)")
                 return
             }
             
-            context.evaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, localizedReason: "Allow password to be sent to Chrome extension", reply: { (success, error) -> Void in
+            context.evaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, localizedReason: "Allow password to be sent to Chrome extension", reply: { (success, error) -> Void in
                 if success {
                     print("success")
                     self.requestLogin()
@@ -240,14 +240,14 @@ class LMLoginSelectViewController: UIViewController, UITableViewDelegate, UITabl
         if selectedServiceIndexPath != nil && selectedDeviceIndexPath != nil {
             let account = self.accounts[selectedServiceIndexPath!.row]
             let deviceId = self.deviceIds[selectedDeviceIndexPath!.row]
-            LMFirebaseInterfacer.sendLoginInfo(deviceId, serviceType: account.type, username: account.email, password: account.password)
+            LMFirebaseInterfacer.sendLoginInfo(deviceId: deviceId, serviceType: account.type, username: account.email, password: account.password)
             
             self.selectedServiceIndexPath = nil;
             
         } else {
-            let alertVC = UIAlertController(title: "Cannot Login", message: "Please Select your Device and Social Account", preferredStyle: UIAlertControllerStyle.Alert)
-            alertVC.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
-            self.presentViewController(alertVC, animated: true, completion: nil)
+            let alertVC = UIAlertController(title: "Cannot Login", message: "Please Select your Device and Social Account", preferredStyle: UIAlertControllerStyle.alert)
+            alertVC.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alertVC, animated: true, completion: nil)
         }
         
     }

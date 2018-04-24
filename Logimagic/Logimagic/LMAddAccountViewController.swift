@@ -22,34 +22,34 @@ class LMAddAccountViewController: UIViewController, UITableViewDelegate, UITable
         self.title = "Add Account"
         
         // Cancel Button
-        let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Done, target: self, action: "cancelButtonPressed")
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.done, target: self, action: #selector(LMAddAccountViewController.cancelButtonPressed))
         self.navigationItem.leftBarButtonItem = cancelButton
 
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = LMAddAccountCell.kCellHeight
-        tableView.registerNib(UINib(nibName: "LMAddAccountCell", bundle: nil), forCellReuseIdentifier: kAddAccountCellId)
+        tableView.register(UINib(nibName: "LMAddAccountCell", bundle: nil), forCellReuseIdentifier: kAddAccountCellId)
         
     }
 
     
     
     // MARK: Table View
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return accountTypes.count
     }
     
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCellWithIdentifier(kAddAccountCellId) as! LMAddAccountCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: kAddAccountCellId) as! LMAddAccountCell
         
-        cell.setupWithAccountType(accountTypes[indexPath.row])
+        cell.setupWithAccountType(type: accountTypes[indexPath.row])
         return cell
     }
     
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.tableView.deselectRow(at: indexPath as IndexPath, animated: true)
         let accountDetailsVC = LMAccountDetailsViewController(nibName:"LMAccountDetailsViewController", bundle: nil)
         accountDetailsVC.selectedAccountType = self.accountTypes[indexPath.row]
         
@@ -61,7 +61,7 @@ class LMAddAccountViewController: UIViewController, UITableViewDelegate, UITable
     
     // Other methods
     func cancelButtonPressed() {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
 }

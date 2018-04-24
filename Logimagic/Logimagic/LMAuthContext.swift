@@ -10,17 +10,17 @@ import UIKit
 
 class LMAuthContext: NSObject {
    
-    let userDefaults = NSUserDefaults.standardUserDefaults()
+    let userDefaults = UserDefaults.standard
     
     let kDeviceIdsKey = "kDeviceIdsKey"
 
     
     var deviceIds: [String]! {
         set {
-            userDefaults.setObject(newValue, forKey: kDeviceIdsKey)
+            userDefaults.set(newValue, forKey: kDeviceIdsKey)
             
         } get {
-            return userDefaults.objectForKey(kDeviceIdsKey) as! [String]
+            return userDefaults.object(forKey: kDeviceIdsKey) as! [String]
         }
     }
     
@@ -28,31 +28,31 @@ class LMAuthContext: NSObject {
     override init() {
         super.init()
         
-        if userDefaults.objectForKey(kDeviceIdsKey) == nil {
-            userDefaults.setObject([], forKey: kDeviceIdsKey)
+        if userDefaults.object(forKey: kDeviceIdsKey) == nil {
+            userDefaults.set([], forKey: kDeviceIdsKey)
         }
 
     }
     
     
     func addDeviceId(deviceId: String) {
-        var idsArray = userDefaults.objectForKey(kDeviceIdsKey) as! [String]
+        var idsArray = userDefaults.object(forKey: kDeviceIdsKey) as! [String]
         
         if !idsArray.contains(deviceId) {
             idsArray.append(deviceId)
-            userDefaults.setObject(idsArray, forKey: kDeviceIdsKey)
+            userDefaults.set(idsArray, forKey: kDeviceIdsKey)
         }
     }
     
     
     func removeDeviceId(deviceId: String) {
-        let idsArray = userDefaults.objectForKey(kDeviceIdsKey) as! [String]
+        let idsArray = userDefaults.object(forKey: kDeviceIdsKey) as! [String]
         
         let newArray = idsArray.filter({
             $0 != deviceId
         })
 
-        userDefaults.setObject(newArray, forKey: kDeviceIdsKey)
+        userDefaults.set(newArray, forKey: kDeviceIdsKey)
     }
     
     

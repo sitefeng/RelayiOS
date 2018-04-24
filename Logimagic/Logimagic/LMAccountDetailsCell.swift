@@ -22,7 +22,7 @@ class LMAccountDetailsCell: UITableViewCell, UITextFieldDelegate {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        textField.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
+        textField.addTarget(self, action: #selector(textFieldDidChange), for: .valueChanged)
 
     }
 
@@ -31,7 +31,7 @@ class LMAccountDetailsCell: UITableViewCell, UITextFieldDelegate {
         
         titleLabel.text = title
         textField.placeholder = placeholderText
-        textField.secureTextEntry = isSecure
+        textField.isSecureTextEntry = isSecure
     }
     
     
@@ -42,7 +42,7 @@ class LMAccountDetailsCell: UITableViewCell, UITextFieldDelegate {
             titleText = titleLabel.text!
         }
         
-        self.delegate?.accountDetailsCell(self, didFinishedEditingWithTitle: titleText, value: self.textField.text!)
+        self.delegate?.accountDetailsCell(cell: self, didFinishedEditingWithTitle: titleText, value: self.textField.text!)
     }
     
 }

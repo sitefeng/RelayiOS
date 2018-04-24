@@ -29,11 +29,11 @@ class LMQRScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDe
         self.title = "Scan QR"
         
         if (isPopupPresented) {
-            let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Done, target: self, action: "cancelButtonPressed")
+            let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.done, target: self, action: #selector(LMQRScanViewController.cancelButtonPressed))
             self.navigationItem.leftBarButtonItem = cancelButton
         }
         
-        self.device = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
+        self.device = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
         self.session = AVCaptureSession()
         
         self.input = try? AVCaptureDeviceInput(device: device)
@@ -42,17 +42,18 @@ class LMQRScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDe
         self.output = AVCaptureMetadataOutput()
         self.session.addOutput(self.output)
         
-        let queue: dispatch_queue_t = dispatch_queue_create("MyQueue", nil)
+        let queue: DispatchQueue = DispatchQueue(label: "MyQueue")
         self.output.setMetadataObjectsDelegate(self, queue: queue)
         
-        let availableTypes: NSArray = self.output.availableMetadataObjectTypes
         
-        if availableTypes.containsObject(AVMetadataObjectTypeQRCode) {
+        let availableTypes: NSArray = self.output.availableMetadataObjectTypes! as NSArray
+        
+        if availableTypes.contains(AVMetadataObjectTypeQRCode) {
             self.output.metadataObjectTypes = [AVMetadataObjectTypeQRCode]
         } else {
-            let alertVC = UIAlertController(title: "Cannot Read QR Code", message: "Error Occurred", preferredStyle: UIAlertControllerStyle.Alert)
-            alertVC.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
-            self.presentViewController(alertVC, animated: true, completion: nil)
+            let alertVC = UIAlertController(title: "Cannot Read QR Code", message: "Error Occurred", preferredStyle: UIAlertControllerStyle.alert)
+            alertVC.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alertVC, animated: true, completion: nil)
         }
         
         self.captureLayer = AVCaptureVideoPreviewLayer(session: self.session)
@@ -62,7 +63,7 @@ class LMQRScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDe
         self.session.startRunning()
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         self.captureLayer.frame = CGRect(x: 0, y: 0, width: self.qrView.bounds.width, height: self.qrView.bounds.height)
@@ -76,14 +77,14 @@ class LMQRScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDe
             self.stopQRSession()
             
             let authContext = LMAuthContext()
-            authContext.addDeviceId(deviceIdString)
+            authContext.addDeviceId(deviceId: deviceIdString!)
             
             if (!isPopupPresented) {
                 let loginSelectVC = LMLoginSelectViewController(nibName: "LMLoginSelectViewController", bundle: nil)
                 let loginNavVC = UINavigationController(rootViewController: loginSelectVC)
-                self.presentViewController(loginNavVC, animated: true, completion: nil)
+                self.present(loginNavVC, animated: true, completion: nil)
             } else {
-                self.dismissViewControllerAnimated(true, completion: nil)
+                self.dismiss(animated: true, completion: nil)
             }
         }
     }
@@ -97,7 +98,7 @@ class LMQRScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDe
     
     
     func cancelButtonPressed() {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
 }

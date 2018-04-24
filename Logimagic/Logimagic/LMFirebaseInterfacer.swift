@@ -15,48 +15,45 @@ class LMFirebaseInterfacer: NSObject {
    
     class func sendLoginInfo(deviceId: String, serviceType: String, username: String, password: String) {
         
-        let ref = Firebase(url: kDevicesURL + deviceId)
+        let ref = Database.database().reference(fromURL: kDevicesURL + deviceId)
         
         let dict = ["username": username,
                     "serviceType": serviceType,
                     "password": password]
         
         ref.updateChildValues(dict)
-        
     }
     
-    class func getDeviceName(deviceId: String, callback: ((String) -> Void)) {
+    class func getDeviceName(deviceId: String, callback: @escaping ((String) -> Void)) {
         
-        let ref = Firebase(url: kDevicesURL + deviceId + "/name")
+        let ref = Database.database().reference(fromURL: kDevicesURL + deviceId + "/name")
         
-        ref.observeEventType(FEventType.Value, withBlock: { (snapshot) -> Void in
-            let valueString = snapshot.value as? String
-            
-            if valueString != nil {
-                callback(valueString!)
+        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+
+            if let valueString = snapshot.value as? String {
+                callback(valueString)
             } else {
                 callback("No Name Given")
             }
-            
         })
-        
+
     }
     
     
-    class func getDeviceNameStatic(deviceId: String, callback: ((String) -> Void)) {
+    class func getDeviceNameStatic(deviceId: String, callback: @escaping ((String) -> Void)) {
         
         let url = NSURL(string: kDevicesURL + deviceId + "/name.json")!
-        let request = NSMutableURLRequest(URL: url)
+        let request = NSMutableURLRequest(url: url as URL)
         
-        request.HTTPMethod = "GET"
-        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { (resp, data, error) -> Void in
+        request.httpMethod = "GET"
+        NSURLConnection.sendAsynchronousRequest(request as URLRequest, queue: OperationQueue.main) { (resp, data, error) -> Void in
             if error != nil {
                 print("No Internet")
                 callback("")
                 return
             }
             
-            let deviceName: AnyObject? = try? NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments)
+            let deviceName: AnyObject? = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments) as AnyObject
             
             let deviceNameStr = deviceName as? String
             if deviceNameStr != nil {

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		166AC1B872C95954AF814CE2 /* libPods-Logimagic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C028785EB8CA712AEDB10380 /* libPods-Logimagic.a */; };
+		9F04F1E01895956D89B0DB0D /* libPods-LogimagicTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A2A3F393467A4A2D441BFFF /* libPods-LogimagicTests.a */; };
 		AAE874661BA48DB600C6D4E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE874651BA48DB600C6D4E4 /* AppDelegate.swift */; };
 		AAE874691BA48DB600C6D4E4 /* Logimagic.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AAE874671BA48DB600C6D4E4 /* Logimagic.xcdatamodeld */; };
 		AAE874701BA48DB600C6D4E4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAE8746F1BA48DB600C6D4E4 /* Images.xcassets */; };
@@ -34,6 +34,7 @@
 		AAE874BA1BA51EA900C6D4E4 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE874B91BA51EA900C6D4E4 /* Account.swift */; };
 		AAE874BE1BA55EB500C6D4E4 /* LMQRScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE874BC1BA55EB500C6D4E4 /* LMQRScanViewController.swift */; };
 		AAE874BF1BA55EB500C6D4E4 /* LMQRScanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAE874BD1BA55EB500C6D4E4 /* LMQRScanViewController.xib */; };
+		B7D694C4740AE19D2AE026A1 /* libPods-Logimagic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 89C36DF9830C73C8CE6924A1 /* libPods-Logimagic.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,8 +48,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		037DDE125FA29A424BB418E3 /* Pods-Logimagic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Logimagic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Logimagic/Pods-Logimagic.debug.xcconfig"; sourceTree = "<group>"; };
-		84496267213C04ACC1FEA02B /* Pods-Logimagic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Logimagic.release.xcconfig"; path = "Pods/Target Support Files/Pods-Logimagic/Pods-Logimagic.release.xcconfig"; sourceTree = "<group>"; };
+		0A2A3F393467A4A2D441BFFF /* libPods-LogimagicTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LogimagicTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C36A0465798C8E5E9B3124F /* Pods-LogimagicTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LogimagicTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LogimagicTests/Pods-LogimagicTests.release.xcconfig"; sourceTree = "<group>"; };
+		47A88455ECF097A33F5C22C0 /* Pods-Logimagic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Logimagic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Logimagic/Pods-Logimagic.debug.xcconfig"; sourceTree = "<group>"; };
+		89C36DF9830C73C8CE6924A1 /* libPods-Logimagic.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Logimagic.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAE874601BA48DB600C6D4E4 /* Logimagic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Logimagic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAE874641BA48DB600C6D4E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AAE874651BA48DB600C6D4E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,7 +82,8 @@
 		AAE874B91BA51EA900C6D4E4 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Account.swift; path = ../Account.swift; sourceTree = "<group>"; };
 		AAE874BC1BA55EB500C6D4E4 /* LMQRScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMQRScanViewController.swift; sourceTree = "<group>"; };
 		AAE874BD1BA55EB500C6D4E4 /* LMQRScanViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LMQRScanViewController.xib; sourceTree = "<group>"; };
-		C028785EB8CA712AEDB10380 /* libPods-Logimagic.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Logimagic.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0A819E515CA5F9E125DD225 /* Pods-LogimagicTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LogimagicTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LogimagicTests/Pods-LogimagicTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C9A79D0E495AF60A41B12711 /* Pods-Logimagic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Logimagic.release.xcconfig"; path = "Pods/Target Support Files/Pods-Logimagic/Pods-Logimagic.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +93,7 @@
 			files = (
 				AAE874A91BA4D64800C6D4E4 /* LocalAuthentication.framework in Frameworks */,
 				AAE8748A1BA4A81000C6D4E4 /* AVFoundation.framework in Frameworks */,
-				166AC1B872C95954AF814CE2 /* libPods-Logimagic.a in Frameworks */,
+				B7D694C4740AE19D2AE026A1 /* libPods-Logimagic.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,25 +101,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F04F1E01895956D89B0DB0D /* libPods-LogimagicTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2566892CF3024089039508EC /* Frameworks */ = {
+		6EE85986824B31E6D8C23CC8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				C028785EB8CA712AEDB10380 /* libPods-Logimagic.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		3FF22AE2765AE6539D0D5652 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				037DDE125FA29A424BB418E3 /* Pods-Logimagic.debug.xcconfig */,
-				84496267213C04ACC1FEA02B /* Pods-Logimagic.release.xcconfig */,
+				47A88455ECF097A33F5C22C0 /* Pods-Logimagic.debug.xcconfig */,
+				C9A79D0E495AF60A41B12711 /* Pods-Logimagic.release.xcconfig */,
+				B0A819E515CA5F9E125DD225 /* Pods-LogimagicTests.debug.xcconfig */,
+				0C36A0465798C8E5E9B3124F /* Pods-LogimagicTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -126,8 +125,8 @@
 				AAE874621BA48DB600C6D4E4 /* Logimagic */,
 				AAE8747B1BA48DB600C6D4E4 /* LogimagicTests */,
 				AAE874611BA48DB600C6D4E4 /* Products */,
-				3FF22AE2765AE6539D0D5652 /* Pods */,
-				2566892CF3024089039508EC /* Frameworks */,
+				6EE85986824B31E6D8C23CC8 /* Pods */,
+				C215E2AB6FD8BB778C205B88 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -214,6 +213,15 @@
 			name = Utilities;
 			sourceTree = "<group>";
 		};
+		C215E2AB6FD8BB778C205B88 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				89C36DF9830C73C8CE6924A1 /* libPods-Logimagic.a */,
+				0A2A3F393467A4A2D441BFFF /* libPods-LogimagicTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -221,11 +229,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AAE874821BA48DB600C6D4E4 /* Build configuration list for PBXNativeTarget "Logimagic" */;
 			buildPhases = (
-				1DAA28118CF973BA182ECA20 /* Check Pods Manifest.lock */,
+				249514BE93C3B123F9312BC8 /* [CP] Check Pods Manifest.lock */,
 				AAE8745C1BA48DB600C6D4E4 /* Sources */,
 				AAE8745D1BA48DB600C6D4E4 /* Frameworks */,
 				AAE8745E1BA48DB600C6D4E4 /* Resources */,
-				2B38B51232212A49FDA3A31F /* Copy Pods Resources */,
+				97D2437583AA9177E8C1475C /* [CP] Embed Pods Frameworks */,
+				8D7D955A23D55770BD364360 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -240,9 +249,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AAE874851BA48DB600C6D4E4 /* Build configuration list for PBXNativeTarget "LogimagicTests" */;
 			buildPhases = (
+				4AA7A5459950B7E9343407EA /* [CP] Check Pods Manifest.lock */,
 				AAE874741BA48DB600C6D4E4 /* Sources */,
 				AAE874751BA48DB600C6D4E4 /* Frameworks */,
 				AAE874761BA48DB600C6D4E4 /* Resources */,
+				5DDF77C8E21FD88DD9DD8665 /* [CP] Embed Pods Frameworks */,
+				DD7E5F05E7D48FD7D459AC8D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -267,9 +279,12 @@
 				TargetAttributes = {
 					AAE8745F1BA48DB600C6D4E4 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = J82WCWCC6R;
+						LastSwiftMigration = 0800;
 					};
 					AAE874771BA48DB600C6D4E4 = {
 						CreatedOnToolsVersion = 6.4;
+						LastSwiftMigration = 0800;
 						TestTargetID = AAE8745F1BA48DB600C6D4E4;
 					};
 				};
@@ -320,34 +335,100 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1DAA28118CF973BA182ECA20 /* Check Pods Manifest.lock */ = {
+		249514BE93C3B123F9312BC8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Logimagic-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4AA7A5459950B7E9343407EA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LogimagicTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5DDF77C8E21FD88DD9DD8665 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LogimagicTests/Pods-LogimagicTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		2B38B51232212A49FDA3A31F /* Copy Pods Resources */ = {
+		8D7D955A23D55770BD364360 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Logimagic/Pods-Logimagic-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		97D2437583AA9177E8C1475C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Logimagic/Pods-Logimagic-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD7E5F05E7D48FD7D459AC8D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LogimagicTests/Pods-LogimagicTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -487,32 +568,37 @@
 		};
 		AAE874831BA48DB600C6D4E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 037DDE125FA29A424BB418E3 /* Pods-Logimagic.debug.xcconfig */;
+			baseConfigurationReference = 47A88455ECF097A33F5C22C0 /* Pods-Logimagic.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = J82WCWCC6R;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Logimagic/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		AAE874841BA48DB600C6D4E4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 84496267213C04ACC1FEA02B /* Pods-Logimagic.release.xcconfig */;
+			baseConfigurationReference = C9A79D0E495AF60A41B12711 /* Pods-Logimagic.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = J82WCWCC6R;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Logimagic/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		AAE874861BA48DB600C6D4E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B0A819E515CA5F9E125DD225 /* Pods-LogimagicTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -526,12 +612,14 @@
 				INFOPLIST_FILE = LogimagicTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Logimagic.app/Logimagic";
 			};
 			name = Debug;
 		};
 		AAE874871BA48DB600C6D4E4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C36A0465798C8E5E9B3124F /* Pods-LogimagicTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -541,6 +629,7 @@
 				INFOPLIST_FILE = LogimagicTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Logimagic.app/Logimagic";
 			};
 			name = Release;

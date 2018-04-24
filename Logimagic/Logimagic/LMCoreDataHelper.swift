@@ -12,17 +12,17 @@ import CoreData
 class LMCoreDataHelper: NSObject {
    
     class func removeAccountFromCoreData(account: LMAccount) {
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let moc = appDelegate.managedObjectContext
         
-        var fetchRequest = NSFetchRequest(entityName: "Account")
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Account")
         fetchRequest.predicate = NSPredicate(format: "email == %@ && type == %@", account.email, account.type)
-        let accountsMOAny = try? moc?.executeFetchRequest(fetchRequest)
+        let accountsMOAny = try? moc?.fetch(fetchRequest)
         
         if accountsMOAny != nil {
             for accoutMOAny in accountsMOAny!! {
                 let accountMO = accoutMOAny as! NSManagedObject
-                moc?.deleteObject(accountMO)
+                moc?.delete(accountMO)
             }
             do {
                 try moc?.save()
@@ -34,11 +34,11 @@ class LMCoreDataHelper: NSObject {
     
     class func saveAccountToCoreData(name: String, email: String, password: String, selectedAccountType: String) {
         
-        let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        let moc = appDelegate.managedObjectContext as NSManagedObjectContext!
+        let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        let moc = appDelegate.managedObjectContext as NSManagedObjectContext?
         
-        let accountDescription = NSEntityDescription.entityForName("Account", inManagedObjectContext: moc)
-        let accountObject = NSManagedObject(entity: accountDescription!, insertIntoManagedObjectContext: moc)
+        let accountDescription = NSEntityDescription.entity(forEntityName: "Account", in: moc!)
+        let accountObject = NSManagedObject(entity: accountDescription!, insertInto: moc)
         
         accountObject.setValue(name, forKey: "name")
         accountObject.setValue(selectedAccountType, forKey: "type")
@@ -46,18 +46,18 @@ class LMCoreDataHelper: NSObject {
         accountObject.setValue(password, forKey: "password")
         
         do {
-            try moc.save()
+            try moc!.save()
         } catch _ {
         }
     }
     
     class func getAllAccounts() -> [LMAccount] {
         
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let moc = appDelegate.managedObjectContext
         
-        let fetchRequest = NSFetchRequest(entityName: "Account")
-        let accountsMO = try? moc?.executeFetchRequest(fetchRequest)
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Account")
+        let accountsMO = try? moc?.fetch(fetchRequest)
         
         if accountsMO == nil {
             return []
