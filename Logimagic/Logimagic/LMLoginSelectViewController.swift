@@ -31,10 +31,7 @@ class LMLoginSelectViewController: UIViewController, UITableViewDelegate, UITabl
         self.title = "Service Login"
         
         // Navigation Bar
-        let addButton = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
-        addButton.addTarget(self, action: #selector(LMLoginSelectViewController.addButtonPressed), for: .touchUpInside)
-        addButton.setImage(UIImage(named: "addIcon"), for: UIControlState.normal)
-        let addNavItem = UIBarButtonItem(customView: addButton)
+        let addNavItem = UIBarButtonItem(image: UIImage(named: "addIcon"), style: .plain, target: self, action: #selector(addButtonPressed(button:)))
         self.navigationItem.rightBarButtonItem = addNavItem
         
         
@@ -66,7 +63,7 @@ class LMLoginSelectViewController: UIViewController, UITableViewDelegate, UITabl
     }
 
     
-    func addButtonPressed() {
+    func addButtonPressed(button: UIBarButtonItem) {
         let addAccountVC = LMAddAccountViewController(nibName:"LMAddAccountViewController", bundle: nil)
         let addAccountNavController = UINavigationController(rootViewController: addAccountVC)
         self.present(addAccountNavController, animated: true, completion: nil)
@@ -123,12 +120,12 @@ class LMLoginSelectViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if serviceTableView == tableView {
             if self.selectedDeviceIndexPath != nil {
             
-                selectedServiceIndexPath = indexPath
+                selectedServiceIndexPath = indexPath as NSIndexPath
 //                self.authenticateWithTouchId()
                 self.requestLogin()
                 
@@ -139,17 +136,17 @@ class LMLoginSelectViewController: UIViewController, UITableViewDelegate, UITabl
                 self.present(alertVC, animated: true, completion: nil)
             }
         } else {
-            self.selectedDeviceIndexPath = indexPath
+            self.selectedDeviceIndexPath = indexPath as NSIndexPath
         }
         
     }
     
     
-    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
 
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle != UITableViewCellEditingStyle.delete) {
             return
         }
@@ -168,7 +165,7 @@ class LMLoginSelectViewController: UIViewController, UITableViewDelegate, UITabl
         
     }
     
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if tableView == serviceTableView {
             return "Social Accounts"
         } else {
@@ -212,26 +209,23 @@ class LMLoginSelectViewController: UIViewController, UITableViewDelegate, UITabl
         let context = LAContext()
         var evError: NSError?
         
-        do {
-            context.canEvaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, error: &evError)
-            if evError != nil {
-                print("auth Error: \(evError)")
-                return
-            }
-            
-            context.evaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, localizedReason: "Allow password to be sent to Chrome extension", reply: { (success, error) -> Void in
-                if success {
-                    print("success")
-                    self.requestLogin()
-                    
-                    
-                } else {
-                    print("error:\(error!.localizedDescription)")
-                }
-            })
-        } catch let error as NSError {
-            evError = error
+        context.canEvaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, error: &evError)
+        if evError != nil {
+            print("auth Error: \(String(describing: evError))")
+            return
         }
+        
+        context.evaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, localizedReason: "Allow password to be sent to Chrome extension", reply: { (success, error) -> Void in
+            if success {
+                print("success")
+                self.requestLogin()
+                
+                
+            } else {
+                print("error:\(error!.localizedDescription)")
+            }
+        })
+
     }
     
     

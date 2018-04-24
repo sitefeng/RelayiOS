@@ -37,7 +37,9 @@ class LMQRScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDe
         self.session = AVCaptureSession()
         
         self.input = try? AVCaptureDeviceInput(device: device)
-        self.session.addInput(self.input)
+        if self.input != nil {
+            self.session.addInput(self.input)
+        }
         
         self.output = AVCaptureMetadataOutput()
         self.session.addOutput(self.output)

@@ -21,14 +21,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         
         // Override point for customization after application launch.
-        let vc = LMLoginSelectViewController(nibName: "LMLoginSelectViewController", bundle: nil)
-        let navController = UINavigationController(rootViewController: vc)
-        
-        
-        
-        self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.window?.rootViewController = navController
-        self.window?.makeKeyAndVisible()
+//        let vc = LMLoginSelectViewController(nibName: "LMLoginSelectViewController", bundle: nil)
+//        let navController = UINavigationController(rootViewController: vc)
+//        
+//        self.window = UIWindow(frame: UIScreen.main.bounds)
+//        self.window?.rootViewController = navController
+//        self.window?.makeKeyAndVisible()
         
         return true
     }
